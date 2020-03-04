@@ -1,0 +1,49 @@
+Tabelas:
+☐ Usuários
+  - Nome
+  - E-mail
+  - Senha
+  - (?) Perfil 
+☐ Posts
+  - Título
+  - Conteúdo
+  - (?) Destaque
+  - Data publicação
+  - Autor_id
+  - Categoria_id
+  - (?) Quantidade de vizualição
+☐ Autor
+  - Nome
+  - (?) Link
+  - (?) Imagem
+  - Sobre
+☐ Comentários
+  - (?) Curtidas
+  - (?) Respostas
+☐ Categorias:
+  - (?) Ordenação
+  - Integrações, Serviços, Financeiro, Agenda, Parceiros e Outros;
+
+
+Home:
+☐ Útlimos Posts (Resumo ?)
+☐ Paginação ??
+
+Post:
+☐ 
+
+Autor:
+☐ 
+
+Usuário:
+☐ 
+
+
+Regras:
+☐ Login
+☐ Apenas usuários logados podem comentar
+☐ Preza UX
+☐ Validações Front e Back
+
+Dúvidas:
+☐ Soft Delete?

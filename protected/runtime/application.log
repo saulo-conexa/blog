@@ -1,0 +1,278 @@
+2020/03/04 10:14:23 [error] [exception.CDbException] CDbException: CDbConnection failed to open the DB connection: could not find driver in /home/saulo/YiiRoot/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /home/saulo/YiiRoot/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /home/saulo/YiiRoot/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /home/saulo/YiiRoot/framework/base/CModule.php(388): CDbConnection->init()
+#3 /home/saulo/YiiRoot/framework/base/CModule.php(104): CModule->getComponent('db')
+#4 /home/saulo/YiiRoot/framework/gii/generators/model/ModelCode.php(57): CModule->__get('db')
+#5 /home/saulo/YiiRoot/framework/web/CFormModel.php(40): ModelCode->init()
+#6 /home/saulo/YiiRoot/framework/gii/CCodeGenerator.php(154): CFormModel->__construct()
+#7 /home/saulo/YiiRoot/framework/gii/CCodeGenerator.php(64): CCodeGenerator->prepare()
+#8 /home/saulo/YiiRoot/framework/web/actions/CInlineAction.php(50): CCodeGenerator->actionIndex()
+#9 /home/saulo/YiiRoot/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#10 /home/saulo/YiiRoot/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#11 /home/saulo/YiiRoot/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/saulo/YiiRoot/framework/web/CWebApplication.php(283): CController->run('')
+#13 /home/saulo/YiiRoot/framework/web/CWebApplication.php(142): CWebApplication->runController('gii/model')
+#14 /home/saulo/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /home/saulo/Documentos/Projetos/blog/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php?r=gii/model
+HTTP_REFERER=http://localhost:8000/index.php?r=gii/default/index
+---
+2020/03/04 10:14:29 [error] [exception.CDbException] CDbException: CDbConnection failed to open the DB connection: could not find driver in /home/saulo/YiiRoot/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /home/saulo/YiiRoot/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /home/saulo/YiiRoot/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /home/saulo/YiiRoot/framework/base/CModule.php(388): CDbConnection->init()
+#3 /home/saulo/YiiRoot/framework/base/CModule.php(104): CModule->getComponent('db')
+#4 /home/saulo/YiiRoot/framework/gii/generators/model/ModelCode.php(57): CModule->__get('db')
+#5 /home/saulo/YiiRoot/framework/web/CFormModel.php(40): ModelCode->init()
+#6 /home/saulo/YiiRoot/framework/gii/CCodeGenerator.php(154): CFormModel->__construct()
+#7 /home/saulo/YiiRoot/framework/gii/CCodeGenerator.php(64): CCodeGenerator->prepare()
+#8 /home/saulo/YiiRoot/framework/web/actions/CInlineAction.php(50): CCodeGenerator->actionIndex()
+#9 /home/saulo/YiiRoot/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#10 /home/saulo/YiiRoot/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#11 /home/saulo/YiiRoot/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/saulo/YiiRoot/framework/web/CWebApplication.php(283): CController->run('')
+#13 /home/saulo/YiiRoot/framework/web/CWebApplication.php(142): CWebApplication->runController('gii/model')
+#14 /home/saulo/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /home/saulo/Documentos/Projetos/blog/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php?r=gii/model
+HTTP_REFERER=http://localhost:8000/index.php?r=gii/default/index
+---
+2020/03/04 10:28:55 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "giix/default/index". in /home/saulo/YiiRoot/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /home/saulo/YiiRoot/framework/web/CWebApplication.php(142): CWebApplication->runController('giix/default/in...')
+#1 /home/saulo/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/saulo/Documentos/Projetos/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=giix/default/index
+---
+2020/03/04 10:28:59 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "giix". in /home/saulo/YiiRoot/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /home/saulo/YiiRoot/framework/web/CWebApplication.php(142): CWebApplication->runController('giix')
+#1 /home/saulo/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/saulo/Documentos/Projetos/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=giix
+---
+2020/03/04 10:38:33 [error] [php] count(): Parameter must be an array or an object that implements Countable (/home/saulo/YiiRoot/framework/gii/generators/model/ModelCode.php:350)
+Stack trace:
+#0 /home/saulo/YiiRoot/framework/gii/CCodeGenerator.php(163): ModelCode->prepare()
+#1 /home/saulo/YiiRoot/framework/gii/CCodeGenerator.php(64): ModelGenerator->prepare()
+#2 /home/saulo/YiiRoot/framework/web/actions/CInlineAction.php(50): ModelGenerator->actionIndex()
+#3 /home/saulo/YiiRoot/framework/web/CController.php(309): CInlineAction->runWithParams()
+#4 /home/saulo/YiiRoot/framework/web/CController.php(287): ModelGenerator->runAction()
+#5 /home/saulo/YiiRoot/framework/web/CController.php(266): ModelGenerator->runActionWithFilters()
+#6 /home/saulo/YiiRoot/framework/web/CWebApplication.php(283): ModelGenerator->run()
+#7 /home/saulo/YiiRoot/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#8 /home/saulo/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#9 /home/saulo/Documentos/Projetos/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=gii/model
+in /home/saulo/Documentos/Projetos/blog/index.php (13)
+2020/03/04 11:18:42 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: '' for column 'excluido' at row 1. The SQL statement executed was: INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`, `biografia`, `excluido`, `cadastrado`, `atualizado`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7).
+in /home/saulo/Documentos/Projetos/blog/protected/controllers/UsuarioController.php (73)
+in /home/saulo/Documentos/Projetos/blog/index.php (13)
+2020/03/04 11:18:42 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: '' for column 'excluido' at row 1. The SQL statement executed was: INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`, `biografia`, `excluido`, `cadastrado`, `atualizado`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7) in /home/saulo/YiiRoot/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /home/saulo/YiiRoot/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /home/saulo/YiiRoot/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /home/saulo/Documentos/Projetos/blog/protected/controllers/UsuarioController.php(73): CActiveRecord->save()
+#3 /home/saulo/YiiRoot/framework/web/actions/CInlineAction.php(50): UsuarioController->actionCreate()
+#4 /home/saulo/YiiRoot/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /home/saulo/YiiRoot/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /home/saulo/YiiRoot/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 /home/saulo/YiiRoot/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /home/saulo/YiiRoot/framework/web/CController.php(292): CFilterChain->run()
+#11 /home/saulo/YiiRoot/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/saulo/YiiRoot/framework/web/CWebApplication.php(283): CController->run('create')
+#13 /home/saulo/YiiRoot/framework/web/CWebApplication.php(142): CWebApplication->runController('usuario/create')
+#14 /home/saulo/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /home/saulo/Documentos/Projetos/blog/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php?r=usuario/create
+HTTP_REFERER=http://localhost:8000/index.php?r=usuario/create
+---
+2020/03/04 11:25:36 [error] [exception.CException] CException: Property "Usuario.excluido" is not defined. in /home/saulo/YiiRoot/framework/base/CComponent.php:174
+Stack trace:
+#0 /home/saulo/YiiRoot/framework/db/ar/CActiveRecord.php(160): CComponent->__set('excluido', '')
+#1 /home/saulo/YiiRoot/framework/base/CModel.php(470): CActiveRecord->__set('excluido', '')
+#2 /home/saulo/YiiRoot/framework/base/CComponent.php(153): CModel->setAttributes(Array)
+#3 /home/saulo/YiiRoot/framework/db/ar/CActiveRecord.php(160): CComponent->__set('attributes', Array)
+#4 /home/saulo/Documentos/Projetos/blog/protected/controllers/UsuarioController.php(72): CActiveRecord->__set('attributes', Array)
+#5 /home/saulo/YiiRoot/framework/web/actions/CInlineAction.php(50): UsuarioController->actionCreate()
+#6 /home/saulo/YiiRoot/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#7 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 /home/saulo/YiiRoot/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /home/saulo/YiiRoot/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 /home/saulo/YiiRoot/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 /home/saulo/YiiRoot/framework/web/CController.php(292): CFilterChain->run()
+#13 /home/saulo/YiiRoot/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /home/saulo/YiiRoot/framework/web/CWebApplication.php(283): CController->run('create')
+#15 /home/saulo/YiiRoot/framework/web/CWebApplication.php(142): CWebApplication->runController('usuario/create')
+#16 /home/saulo/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /home/saulo/Documentos/Projetos/blog/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/index.php?r=usuario/create
+HTTP_REFERER=http://localhost:8000/index.php?r=usuario/create
+---
+2020/03/04 11:26:26 [warning] [application] Failed to set unsafe attribute "excluido" of "Usuario".
+in /home/saulo/Documentos/Projetos/blog/protected/controllers/UsuarioController.php (72)
+in /home/saulo/Documentos/Projetos/blog/index.php (13)
+2020/03/04 11:26:26 [warning] [application] Failed to set unsafe attribute "cadastrado" of "Usuario".
+in /home/saulo/Documentos/Projetos/blog/protected/controllers/UsuarioController.php (72)
+in /home/saulo/Documentos/Projetos/blog/index.php (13)
+2020/03/04 11:26:26 [warning] [application] Failed to set unsafe attribute "atualizado" of "Usuario".
+in /home/saulo/Documentos/Projetos/blog/protected/controllers/UsuarioController.php (72)
+in /home/saulo/Documentos/Projetos/blog/index.php (13)
+2020/03/04 11:26:26 [error] [exception.CException] CException: Property "Usuario.excluido" is not defined. in /home/saulo/YiiRoot/framework/base/CComponent.php:131
+Stack trace:
+#0 /home/saulo/YiiRoot/framework/db/ar/CActiveRecord.php(144): CComponent->__get('excluido')
+#1 /home/saulo/YiiRoot/framework/web/helpers/CHtml.php(1809): CActiveRecord->__get('excluido')
+#2 /home/saulo/YiiRoot/framework/zii/widgets/CDetailView.php(212): CHtml::value(Object(Usuario), 'excluido')
+#3 /home/saulo/YiiRoot/framework/web/CBaseController.php(174): CDetailView->run()
+#4 /home/saulo/Documentos/Projetos/blog/protected/views/usuario/view.php(22): CBaseController->widget('zii.widgets.CDe...', Array)
+#5 /home/saulo/YiiRoot/framework/web/CBaseController.php(127): require('/home/saulo/Doc...')
+#6 /home/saulo/YiiRoot/framework/web/CBaseController.php(96): CBaseController->renderInternal('/home/saulo/Doc...', Array, true)
+#7 /home/saulo/YiiRoot/framework/web/CController.php(870): CBaseController->renderFile('/home/saulo/Doc...', Array, true)
+#8 /home/saulo/YiiRoot/framework/web/CController.php(783): CController->renderPartial('view', Array, true)
+#9 /home/saulo/Documentos/Projetos/blog/protected/controllers/UsuarioController.php(55): CController->render('view', Array)
+#10 [internal function]: UsuarioController->actionView('1')
+#11 /home/saulo/YiiRoot/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(UsuarioController), Array)
+#12 /home/saulo/YiiRoot/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(UsuarioController), Object(ReflectionMethod), Array)
+#13 /home/saulo/YiiRoot/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#14 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#15 /home/saulo/YiiRoot/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#16 /home/saulo/YiiRoot/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#17 /home/saulo/YiiRoot/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#18 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#19 /home/saulo/YiiRoot/framework/web/CController.php(292): CFilterChain->run()
+#20 /home/saulo/YiiRoot/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 /home/saulo/YiiRoot/framework/web/CWebApplication.php(283): CController->run('view')
+#22 /home/saulo/YiiRoot/framework/web/CWebApplication.php(142): CWebApplication->runController('usuario/view')
+#23 /home/saulo/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#24 /home/saulo/Documentos/Projetos/blog/index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/index.php?r=usuario/view&id=1
+HTTP_REFERER=http://localhost:8000/index.php?r=usuario/create
+---
+2020/03/04 11:26:28 [error] [exception.CException] CException: Property "Usuario.excluido" is not defined. in /home/saulo/YiiRoot/framework/base/CComponent.php:131
+Stack trace:
+#0 /home/saulo/YiiRoot/framework/db/ar/CActiveRecord.php(144): CComponent->__get('excluido')
+#1 /home/saulo/YiiRoot/framework/web/helpers/CHtml.php(1809): CActiveRecord->__get('excluido')
+#2 /home/saulo/YiiRoot/framework/zii/widgets/CDetailView.php(212): CHtml::value(Object(Usuario), 'excluido')
+#3 /home/saulo/YiiRoot/framework/web/CBaseController.php(174): CDetailView->run()
+#4 /home/saulo/Documentos/Projetos/blog/protected/views/usuario/view.php(22): CBaseController->widget('zii.widgets.CDe...', Array)
+#5 /home/saulo/YiiRoot/framework/web/CBaseController.php(127): require('/home/saulo/Doc...')
+#6 /home/saulo/YiiRoot/framework/web/CBaseController.php(96): CBaseController->renderInternal('/home/saulo/Doc...', Array, true)
+#7 /home/saulo/YiiRoot/framework/web/CController.php(870): CBaseController->renderFile('/home/saulo/Doc...', Array, true)
+#8 /home/saulo/YiiRoot/framework/web/CController.php(783): CController->renderPartial('view', Array, true)
+#9 /home/saulo/Documentos/Projetos/blog/protected/controllers/UsuarioController.php(55): CController->render('view', Array)
+#10 [internal function]: UsuarioController->actionView('1')
+#11 /home/saulo/YiiRoot/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(UsuarioController), Array)
+#12 /home/saulo/YiiRoot/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(UsuarioController), Object(ReflectionMethod), Array)
+#13 /home/saulo/YiiRoot/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#14 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#15 /home/saulo/YiiRoot/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#16 /home/saulo/YiiRoot/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#17 /home/saulo/YiiRoot/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#18 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#19 /home/saulo/YiiRoot/framework/web/CController.php(292): CFilterChain->run()
+#20 /home/saulo/YiiRoot/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 /home/saulo/YiiRoot/framework/web/CWebApplication.php(283): CController->run('view')
+#22 /home/saulo/YiiRoot/framework/web/CWebApplication.php(142): CWebApplication->runController('usuario/view')
+#23 /home/saulo/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#24 /home/saulo/Documentos/Projetos/blog/index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/index.php?r=usuario/view&id=1
+HTTP_REFERER=http://localhost:8000/index.php?r=usuario/create
+---
+2020/03/04 11:26:31 [error] [exception.CException] CException: Property "Usuario.excluido" is not defined. in /home/saulo/YiiRoot/framework/base/CComponent.php:131
+Stack trace:
+#0 /home/saulo/YiiRoot/framework/db/ar/CActiveRecord.php(144): CComponent->__get('excluido')
+#1 /home/saulo/YiiRoot/framework/web/helpers/CHtml.php(2158): CActiveRecord->__get('excluido')
+#2 /home/saulo/YiiRoot/framework/web/helpers/CHtml.php(1887): CHtml::resolveValue(Object(Usuario), 'excluido')
+#3 /home/saulo/YiiRoot/framework/web/helpers/CHtml.php(1217): CHtml::activeInputField('text', Object(Usuario), 'excluido', Array)
+#4 /home/saulo/YiiRoot/framework/web/widgets/CActiveForm.php(658): CHtml::activeTextField(Object(Usuario), 'excluido', Array)
+#5 /home/saulo/Documentos/Projetos/blog/protected/views/usuario/_form.php(50): CActiveForm->textField(Object(Usuario), 'excluido')
+#6 /home/saulo/YiiRoot/framework/web/CBaseController.php(127): require('/home/saulo/Doc...')
+#7 /home/saulo/YiiRoot/framework/web/CBaseController.php(96): CBaseController->renderInternal('/home/saulo/Doc...', Array, true)
+#8 /home/saulo/YiiRoot/framework/web/CController.php(870): CBaseController->renderFile('/home/saulo/Doc...', Array, true)
+#9 /home/saulo/Documentos/Projetos/blog/protected/views/usuario/create.php(18): CController->renderPartial('_form', Array)
+#10 /home/saulo/YiiRoot/framework/web/CBaseController.php(127): require('/home/saulo/Doc...')
+#11 /home/saulo/YiiRoot/framework/web/CBaseController.php(96): CBaseController->renderInternal('/home/saulo/Doc...', Array, true)
+#12 /home/saulo/YiiRoot/framework/web/CController.php(870): CBaseController->renderFile('/home/saulo/Doc...', Array, true)
+#13 /home/saulo/YiiRoot/framework/web/CController.php(783): CController->renderPartial('create', Array, true)
+#14 /home/saulo/Documentos/Projetos/blog/protected/controllers/UsuarioController.php(78): CController->render('create', Array)
+#15 /home/saulo/YiiRoot/framework/web/actions/CInlineAction.php(50): UsuarioController->actionCreate()
+#16 /home/saulo/YiiRoot/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#17 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#18 /home/saulo/YiiRoot/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#19 /home/saulo/YiiRoot/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#20 /home/saulo/YiiRoot/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#21 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#22 /home/saulo/YiiRoot/framework/web/CController.php(292): CFilterChain->run()
+#23 /home/saulo/YiiRoot/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /home/saulo/YiiRoot/framework/web/CWebApplication.php(283): CController->run('create')
+#25 /home/saulo/YiiRoot/framework/web/CWebApplication.php(142): CWebApplication->runController('usuario/create')
+#26 /home/saulo/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#27 /home/saulo/Documentos/Projetos/blog/index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/index.php?r=usuario/create
+HTTP_REFERER=http://localhost:8000/index.php?r=site/login
+---
+2020/03/04 11:27:13 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`, `biografia`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4).
+in /home/saulo/Documentos/Projetos/blog/protected/controllers/UsuarioController.php (73)
+in /home/saulo/Documentos/Projetos/blog/index.php (13)
+2020/03/04 11:27:13 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`, `biografia`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4) in /home/saulo/YiiRoot/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /home/saulo/YiiRoot/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /home/saulo/YiiRoot/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /home/saulo/Documentos/Projetos/blog/protected/controllers/UsuarioController.php(73): CActiveRecord->save()
+#3 /home/saulo/YiiRoot/framework/web/actions/CInlineAction.php(50): UsuarioController->actionCreate()
+#4 /home/saulo/YiiRoot/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /home/saulo/YiiRoot/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /home/saulo/YiiRoot/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 /home/saulo/YiiRoot/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /home/saulo/YiiRoot/framework/web/CController.php(292): CFilterChain->run()
+#11 /home/saulo/YiiRoot/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/saulo/YiiRoot/framework/web/CWebApplication.php(283): CController->run('create')
+#13 /home/saulo/YiiRoot/framework/web/CWebApplication.php(142): CWebApplication->runController('usuario/create')
+#14 /home/saulo/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /home/saulo/Documentos/Projetos/blog/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php?r=usuario/create
+HTTP_REFERER=http://localhost:8000/index.php?r=usuario/create
+---
+2020/03/04 11:28:44 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`, `biografia`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4).
+in /home/saulo/Documentos/Projetos/blog/protected/controllers/UsuarioController.php (73)
+in /home/saulo/Documentos/Projetos/blog/index.php (13)
+2020/03/04 11:28:44 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`, `biografia`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4) in /home/saulo/YiiRoot/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /home/saulo/YiiRoot/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /home/saulo/YiiRoot/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /home/saulo/Documentos/Projetos/blog/protected/controllers/UsuarioController.php(73): CActiveRecord->save()
+#3 /home/saulo/YiiRoot/framework/web/actions/CInlineAction.php(50): UsuarioController->actionCreate()
+#4 /home/saulo/YiiRoot/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /home/saulo/YiiRoot/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /home/saulo/YiiRoot/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 /home/saulo/YiiRoot/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /home/saulo/YiiRoot/framework/web/CController.php(292): CFilterChain->run()
+#11 /home/saulo/YiiRoot/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/saulo/YiiRoot/framework/web/CWebApplication.php(283): CController->run('create')
+#13 /home/saulo/YiiRoot/framework/web/CWebApplication.php(142): CWebApplication->runController('usuario/create')
+#14 /home/saulo/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /home/saulo/Documentos/Projetos/blog/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php?r=usuario/create
+HTTP_REFERER=http://localhost:8000/index.php?r=usuario/create
+---
