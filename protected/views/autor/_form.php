@@ -1,13 +1,13 @@
 <?php
-/* @var $this UsuarioController */
-/* @var $model Usuario */
+/* @var $this AutorController */
+/* @var $model Autor */
 /* @var $form CActiveForm */
 ?>
 
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'usuario-form',
+	'id'=>'autor-form',
 	'enableAjaxValidation'=>false,
 )); ?>
 
@@ -22,21 +22,15 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'email'); ?>
-		<?php echo $form->textField($model,'email',array('size'=>60,'maxlength'=>100)); ?>
-		<?php echo $form->error($model,'email'); ?>
+		<?php echo $form->labelEx($model,'linkExterno'); ?>
+		<?php echo $form->textField($model,'linkExterno',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->error($model,'linkExterno'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'senha'); ?>
-		<?php echo $form->textField($model,'senha',array('size'=>60,'maxlength'=>100)); ?>
-		<?php echo $form->error($model,'senha'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'biografia'); ?>
-		<?php echo $form->textField($model,'biografia',array('size'=>60,'maxlength'=>255)); ?>
-		<?php echo $form->error($model,'biografia'); ?>
+		<?php echo $form->labelEx($model,'sobre'); ?>
+		<?php echo $form->textField($model,'sobre',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->error($model,'sobre'); ?>
 	</div>
 
 	<div class="row buttons">

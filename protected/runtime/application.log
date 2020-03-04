@@ -276,3 +276,109 @@ Stack trace:
 REQUEST_URI=/index.php?r=usuario/create
 HTTP_REFERER=http://localhost:8000/index.php?r=usuario/create
 ---
+2020/03/04 11:44:55 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1364 Field 'id' doesn't have a default value. The SQL statement executed was: INSERT INTO `usuario` (`nome`, `email`, `senha`, `biografia`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in /home/saulo/Documentos/Projetos/blog/protected/controllers/UsuarioController.php (73)
+in /home/saulo/Documentos/Projetos/blog/index.php (13)
+2020/03/04 11:44:55 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 1364 Field 'id' doesn't have a default value. The SQL statement executed was: INSERT INTO `usuario` (`nome`, `email`, `senha`, `biografia`) VALUES (:yp0, :yp1, :yp2, :yp3) in /home/saulo/YiiRoot/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /home/saulo/YiiRoot/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /home/saulo/YiiRoot/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /home/saulo/Documentos/Projetos/blog/protected/controllers/UsuarioController.php(73): CActiveRecord->save()
+#3 /home/saulo/YiiRoot/framework/web/actions/CInlineAction.php(50): UsuarioController->actionCreate()
+#4 /home/saulo/YiiRoot/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /home/saulo/YiiRoot/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /home/saulo/YiiRoot/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 /home/saulo/YiiRoot/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /home/saulo/YiiRoot/framework/web/CController.php(292): CFilterChain->run()
+#11 /home/saulo/YiiRoot/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/saulo/YiiRoot/framework/web/CWebApplication.php(283): CController->run('create')
+#13 /home/saulo/YiiRoot/framework/web/CWebApplication.php(142): CWebApplication->runController('usuario/create')
+#14 /home/saulo/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /home/saulo/Documentos/Projetos/blog/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php?r=usuario/create
+HTTP_REFERER=http://localhost:8000/index.php?r=usuario/create
+---
+2020/03/04 11:45:10 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1364 Field 'id' doesn't have a default value. The SQL statement executed was: INSERT INTO `usuario` (`nome`, `email`, `senha`, `biografia`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in /home/saulo/Documentos/Projetos/blog/protected/controllers/UsuarioController.php (73)
+in /home/saulo/Documentos/Projetos/blog/index.php (13)
+2020/03/04 11:45:10 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 1364 Field 'id' doesn't have a default value. The SQL statement executed was: INSERT INTO `usuario` (`nome`, `email`, `senha`, `biografia`) VALUES (:yp0, :yp1, :yp2, :yp3) in /home/saulo/YiiRoot/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /home/saulo/YiiRoot/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /home/saulo/YiiRoot/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /home/saulo/Documentos/Projetos/blog/protected/controllers/UsuarioController.php(73): CActiveRecord->save()
+#3 /home/saulo/YiiRoot/framework/web/actions/CInlineAction.php(50): UsuarioController->actionCreate()
+#4 /home/saulo/YiiRoot/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /home/saulo/YiiRoot/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /home/saulo/YiiRoot/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 /home/saulo/YiiRoot/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /home/saulo/YiiRoot/framework/web/CController.php(292): CFilterChain->run()
+#11 /home/saulo/YiiRoot/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/saulo/YiiRoot/framework/web/CWebApplication.php(283): CController->run('create')
+#13 /home/saulo/YiiRoot/framework/web/CWebApplication.php(142): CWebApplication->runController('usuario/create')
+#14 /home/saulo/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /home/saulo/Documentos/Projetos/blog/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php?r=usuario/create
+HTTP_REFERER=http://localhost:8000/index.php?r=usuario/create
+---
+2020/03/04 12:27:58 [error] [php] count(): Parameter must be an array or an object that implements Countable (/home/saulo/YiiRoot/framework/gii/generators/model/ModelCode.php:350)
+Stack trace:
+#0 /home/saulo/YiiRoot/framework/gii/CCodeGenerator.php(163): ModelCode->prepare()
+#1 /home/saulo/YiiRoot/framework/gii/CCodeGenerator.php(64): ModelGenerator->prepare()
+#2 /home/saulo/YiiRoot/framework/web/actions/CInlineAction.php(50): ModelGenerator->actionIndex()
+#3 /home/saulo/YiiRoot/framework/web/CController.php(309): CInlineAction->runWithParams()
+#4 /home/saulo/YiiRoot/framework/web/CController.php(287): ModelGenerator->runAction()
+#5 /home/saulo/YiiRoot/framework/web/CController.php(266): ModelGenerator->runActionWithFilters()
+#6 /home/saulo/YiiRoot/framework/web/CWebApplication.php(283): ModelGenerator->run()
+#7 /home/saulo/YiiRoot/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#8 /home/saulo/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#9 /home/saulo/Documentos/Projetos/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=gii/model
+in /home/saulo/Documentos/Projetos/blog/index.php (13)
+2020/03/04 12:29:24 [error] [php] count(): Parameter must be an array or an object that implements Countable (/home/saulo/YiiRoot/framework/gii/generators/model/ModelCode.php:350)
+Stack trace:
+#0 /home/saulo/YiiRoot/framework/gii/CCodeGenerator.php(163): ModelCode->prepare()
+#1 /home/saulo/YiiRoot/framework/gii/CCodeGenerator.php(64): ModelGenerator->prepare()
+#2 /home/saulo/YiiRoot/framework/web/actions/CInlineAction.php(50): ModelGenerator->actionIndex()
+#3 /home/saulo/YiiRoot/framework/web/CController.php(309): CInlineAction->runWithParams()
+#4 /home/saulo/YiiRoot/framework/web/CController.php(287): ModelGenerator->runAction()
+#5 /home/saulo/YiiRoot/framework/web/CController.php(266): ModelGenerator->runActionWithFilters()
+#6 /home/saulo/YiiRoot/framework/web/CWebApplication.php(283): ModelGenerator->run()
+#7 /home/saulo/YiiRoot/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#8 /home/saulo/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#9 /home/saulo/Documentos/Projetos/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=gii/model
+in /home/saulo/Documentos/Projetos/blog/index.php (13)
+2020/03/04 12:33:31 [error] [php] count(): Parameter must be an array or an object that implements Countable (/home/saulo/YiiRoot/framework/gii/generators/model/ModelCode.php:350)
+Stack trace:
+#0 /home/saulo/YiiRoot/framework/gii/CCodeGenerator.php(163): ModelCode->prepare()
+#1 /home/saulo/YiiRoot/framework/gii/CCodeGenerator.php(64): ModelGenerator->prepare()
+#2 /home/saulo/YiiRoot/framework/web/actions/CInlineAction.php(50): ModelGenerator->actionIndex()
+#3 /home/saulo/YiiRoot/framework/web/CController.php(309): CInlineAction->runWithParams()
+#4 /home/saulo/YiiRoot/framework/web/CController.php(287): ModelGenerator->runAction()
+#5 /home/saulo/YiiRoot/framework/web/CController.php(266): ModelGenerator->runActionWithFilters()
+#6 /home/saulo/YiiRoot/framework/web/CWebApplication.php(283): ModelGenerator->run()
+#7 /home/saulo/YiiRoot/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#8 /home/saulo/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#9 /home/saulo/Documentos/Projetos/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=gii/model
+in /home/saulo/Documentos/Projetos/blog/index.php (13)
+2020/03/04 12:33:39 [error] [php] count(): Parameter must be an array or an object that implements Countable (/home/saulo/YiiRoot/framework/gii/generators/model/ModelCode.php:350)
+Stack trace:
+#0 /home/saulo/YiiRoot/framework/gii/CCodeGenerator.php(163): ModelCode->prepare()
+#1 /home/saulo/YiiRoot/framework/gii/CCodeGenerator.php(64): ModelGenerator->prepare()
+#2 /home/saulo/YiiRoot/framework/web/actions/CInlineAction.php(50): ModelGenerator->actionIndex()
+#3 /home/saulo/YiiRoot/framework/web/CController.php(309): CInlineAction->runWithParams()
+#4 /home/saulo/YiiRoot/framework/web/CController.php(287): ModelGenerator->runAction()
+#5 /home/saulo/YiiRoot/framework/web/CController.php(266): ModelGenerator->runActionWithFilters()
+#6 /home/saulo/YiiRoot/framework/web/CWebApplication.php(283): ModelGenerator->run()
+#7 /home/saulo/YiiRoot/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#8 /home/saulo/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#9 /home/saulo/Documentos/Projetos/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=gii/model
+in /home/saulo/Documentos/Projetos/blog/index.php (13)

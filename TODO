@@ -1,28 +1,25 @@
 Tabelas:
-☐ Usuários
-  - Nome
-  - E-mail
-  - Senha
-  - (?) Perfil 
-☐ Posts
-  - Título
-  - Conteúdo
-  - (?) Destaque
-  - Data publicação
-  - Autor_id
-  - Categoria_id
-  - (?) Quantidade de vizualição
-☐ Autor
-  - Nome
-  - (?) Link
-  - (?) Imagem
-  - Sobre
-☐ Comentários
-  - (?) Curtidas
-  - (?) Respostas
-☐ Categorias:
-  - (?) Ordenação
-  - Integrações, Serviços, Financeiro, Agenda, Parceiros e Outros;
+✔ Usuários @done(20-03-04 12:29)
+  ✔ Nome @done(20-03-04 11:49)
+  ✔ E-mail @done(20-03-04 11:49)
+  ✔ Senha @done(20-03-04 11:49)
+  ✔ Perfil @done(20-03-04 11:49)
+✔ Posts @done(20-03-04 12:34)
+  ✔ Título @done(20-03-04 12:25)
+  ✔ Conteúdo @done(20-03-04 12:25)
+  ✔ Destaque @done(20-03-04 12:25)
+  ✔ Data publicação @done(20-03-04 12:25)
+  ✔ Autor_id @done(20-03-04 12:25)
+  ✔ Categoria_id @done(20-03-04 12:25)
+  ✔ Quantidade de vizualição @done(20-03-04 12:25)
+✔ Autor @done(20-03-04 12:32)
+  ✔ Nome @done(20-03-04 12:25)
+  ✔ Link @done(20-03-04 12:25)
+  ✔ Sobre @done(20-03-04 12:25)
+✔ Comentários @done(20-03-04 12:34)
+  ✔ Curtidas @done(20-03-04 12:25)
+✔ Categorias: @done(20-03-04 12:29)
+  ✔ Ordenação @done(20-03-04 12:25)
 
 
 Home:
