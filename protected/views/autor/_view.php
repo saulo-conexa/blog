@@ -1,25 +1,17 @@
-<?php
-/* @var $this AutorController */
-/* @var $data Autor */
-?>
-
 <div class="view">
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
+	<?php echo GxHtml::encode($data->getAttributeLabel('id')); ?>:
+	<?php echo GxHtml::link(GxHtml::encode($data->id), array('view', 'id' => $data->id)); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('nome')); ?>:</b>
-	<?php echo CHtml::encode($data->nome); ?>
+	<?php echo GxHtml::encode($data->getAttributeLabel('nome')); ?>:
+	<?php echo GxHtml::encode($data->nome); ?>
 	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('linkExterno')); ?>:</b>
-	<?php echo CHtml::encode($data->linkExterno); ?>
+	<?php echo GxHtml::encode($data->getAttributeLabel('linkExterno')); ?>:
+	<?php echo GxHtml::encode($data->linkExterno); ?>
 	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('sobre')); ?>:</b>
-	<?php echo CHtml::encode($data->sobre); ?>
+	<?php echo GxHtml::encode($data->getAttributeLabel('sobre')); ?>:
+	<?php echo GxHtml::encode($data->sobre); ?>
 	<br />
-
 
 </div>

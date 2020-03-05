@@ -1,18 +1,20 @@
 <?php
-/* @var $this ComentarioController */
-/* @var $model Comentario */
 
-$this->breadcrumbs=array(
-	'Comentarios'=>array('index'),
-	'Create',
+$this->breadcrumbs = array(
+	$model->label(2) => array('index'),
+	Yii::t('app', 'Create'),
 );
 
-$this->menu=array(
-	array('label'=>'List Comentario', 'url'=>array('index')),
-	array('label'=>'Manage Comentario', 'url'=>array('admin')),
+$this->menu = array(
+	array('label'=>Yii::t('app', 'List') . ' ' . $model->label(2), 'url' => array('index')),
+	array('label'=>Yii::t('app', 'Manage') . ' ' . $model->label(2), 'url' => array('admin')),
 );
 ?>
 
-<h1>Create Comentario</h1>
+<h1><?php echo Yii::t('app', 'Create') . ' ' . GxHtml::encode($model->label()); ?></h1>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php
+$this->renderPartial('_form', array(
+		'model' => $model,
+		'buttons' => 'create'));
+?>

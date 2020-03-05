@@ -1,21 +1,22 @@
 <?php
-/* @var $this CategoriaController */
-/* @var $model Categoria */
 
-$this->breadcrumbs=array(
-	'Categorias'=>array('index'),
-	$model->id=>array('view','id'=>$model->id),
-	'Update',
+$this->breadcrumbs = array(
+	$model->label(2) => array('index'),
+	GxHtml::valueEx($model) => array('view', 'id' => GxActiveRecord::extractPkValue($model, true)),
+	Yii::t('app', 'Update'),
 );
 
-$this->menu=array(
-	array('label'=>'List Categoria', 'url'=>array('index')),
-	array('label'=>'Create Categoria', 'url'=>array('create')),
-	array('label'=>'View Categoria', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Categoria', 'url'=>array('admin')),
+$this->menu = array(
+	array('label' => Yii::t('app', 'List') . ' ' . $model->label(2), 'url'=>array('index')),
+	array('label' => Yii::t('app', 'Create') . ' ' . $model->label(), 'url'=>array('create')),
+	array('label' => Yii::t('app', 'View') . ' ' . $model->label(), 'url'=>array('view', 'id' => GxActiveRecord::extractPkValue($model, true))),
+	array('label' => Yii::t('app', 'Manage') . ' ' . $model->label(2), 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update Categoria <?php echo $model->id; ?></h1>
+<h1><?php echo Yii::t('app', 'Update') . ' ' . GxHtml::encode($model->label()) . ' ' . GxHtml::encode(GxHtml::valueEx($model)); ?></h1>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php
+$this->renderPartial('_form', array(
+		'model' => $model));
+?>

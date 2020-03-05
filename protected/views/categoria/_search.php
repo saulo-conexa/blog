@@ -1,33 +1,27 @@
-<?php
-/* @var $this CategoriaController */
-/* @var $model Categoria */
-/* @var $form CActiveForm */
-?>
-
 <div class="wide form">
 
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'action'=>Yii::app()->createUrl($this->route),
-	'method'=>'get',
+<?php $form = $this->beginWidget('GxActiveForm', array(
+	'action' => Yii::app()->createUrl($this->route),
+	'method' => 'get',
 )); ?>
 
 	<div class="row">
-		<?php echo $form->label($model,'id'); ?>
-		<?php echo $form->textField($model,'id'); ?>
+		<?php echo $form->label($model, 'id'); ?>
+		<?php echo $form->textField($model, 'id'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'titulo'); ?>
-		<?php echo $form->textField($model,'titulo',array('size'=>60,'maxlength'=>100)); ?>
+		<?php echo $form->label($model, 'titulo'); ?>
+		<?php echo $form->textField($model, 'titulo', array('maxlength' => 100)); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'ordem'); ?>
-		<?php echo $form->textField($model,'ordem'); ?>
+		<?php echo $form->label($model, 'ordem'); ?>
+		<?php echo $form->textField($model, 'ordem'); ?>
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Search'); ?>
+		<?php echo GxHtml::submitButton(Yii::t('app', 'Search')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

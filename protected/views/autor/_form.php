@@ -1,42 +1,39 @@
-<?php
-/* @var $this AutorController */
-/* @var $model Autor */
-/* @var $form CActiveForm */
-?>
-
 <div class="form">
 
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'autor-form',
-	'enableAjaxValidation'=>false,
-)); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+<?php $form = $this->beginWidget('GxActiveForm', array(
+	'id' => 'autor-form',
+	'enableAjaxValidation' => false,
+));
+?>
+
+	<p class="note">
+		<?php echo Yii::t('app', 'Fields with'); ?> <span class="required">*</span> <?php echo Yii::t('app', 'are required'); ?>.
+	</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
+		<div class="row">
 		<?php echo $form->labelEx($model,'nome'); ?>
-		<?php echo $form->textField($model,'nome',array('size'=>60,'maxlength'=>100)); ?>
+		<?php echo $form->textField($model, 'nome', array('maxlength' => 100)); ?>
 		<?php echo $form->error($model,'nome'); ?>
-	</div>
-
-	<div class="row">
+		</div><!-- row -->
+		<div class="row">
 		<?php echo $form->labelEx($model,'linkExterno'); ?>
-		<?php echo $form->textField($model,'linkExterno',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->textField($model, 'linkExterno', array('maxlength' => 255)); ?>
 		<?php echo $form->error($model,'linkExterno'); ?>
-	</div>
-
-	<div class="row">
+		</div><!-- row -->
+		<div class="row">
 		<?php echo $form->labelEx($model,'sobre'); ?>
-		<?php echo $form->textField($model,'sobre',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->textField($model, 'sobre', array('maxlength' => 255)); ?>
 		<?php echo $form->error($model,'sobre'); ?>
-	</div>
+		</div><!-- row -->
 
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
-	</div>
+		<label><?php echo GxHtml::encode($model->getRelationLabel('posts')); ?></label>
+		<?php echo $form->checkBoxList($model, 'posts', GxHtml::encodeEx(GxHtml::listDataEx(Post::model()->findAllAttributes(null, true)), false, true)); ?>
 
-<?php $this->endWidget(); ?>
-
+<?php
+echo GxHtml::submitButton(Yii::t('app', 'Save'));
+$this->endWidget();
+?>
 </div><!-- form -->

@@ -1,38 +1,32 @@
-<?php
-/* @var $this ComentarioController */
-/* @var $model Comentario */
-/* @var $form CActiveForm */
-?>
-
 <div class="wide form">
 
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'action'=>Yii::app()->createUrl($this->route),
-	'method'=>'get',
+<?php $form = $this->beginWidget('GxActiveForm', array(
+	'action' => Yii::app()->createUrl($this->route),
+	'method' => 'get',
 )); ?>
 
 	<div class="row">
-		<?php echo $form->label($model,'id'); ?>
-		<?php echo $form->textField($model,'id'); ?>
+		<?php echo $form->label($model, 'id'); ?>
+		<?php echo $form->textField($model, 'id'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'texto'); ?>
-		<?php echo $form->textField($model,'texto',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->label($model, 'texto'); ?>
+		<?php echo $form->textField($model, 'texto', array('maxlength' => 255)); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'idPost'); ?>
-		<?php echo $form->textField($model,'idPost'); ?>
+		<?php echo $form->label($model, 'idPost'); ?>
+		<?php echo $form->dropDownList($model, 'idPost', GxHtml::listDataEx(Post::model()->findAllAttributes(null, true)), array('prompt' => Yii::t('app', 'All'))); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'qtdCurtidas'); ?>
-		<?php echo $form->textField($model,'qtdCurtidas'); ?>
+		<?php echo $form->label($model, 'qtdCurtidas'); ?>
+		<?php echo $form->textField($model, 'qtdCurtidas'); ?>
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Search'); ?>
+		<?php echo GxHtml::submitButton(Yii::t('app', 'Search')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

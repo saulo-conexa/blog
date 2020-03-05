@@ -1,37 +1,26 @@
-<?php
-/* @var $this PostController */
-/* @var $data Post */
-?>
-
 <div class="view">
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
+	<?php echo GxHtml::encode($data->getAttributeLabel('id')); ?>:
+	<?php echo GxHtml::link(GxHtml::encode($data->id), array('view', 'id' => $data->id)); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('titulo')); ?>:</b>
-	<?php echo CHtml::encode($data->titulo); ?>
+	<?php echo GxHtml::encode($data->getAttributeLabel('titulo')); ?>:
+	<?php echo GxHtml::encode($data->titulo); ?>
 	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('texto')); ?>:</b>
-	<?php echo CHtml::encode($data->texto); ?>
+	<?php echo GxHtml::encode($data->getAttributeLabel('texto')); ?>:
+	<?php echo GxHtml::encode($data->texto); ?>
 	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('destaque')); ?>:</b>
-	<?php echo CHtml::encode($data->destaque); ?>
+	<?php echo GxHtml::encode($data->getAttributeLabel('destaque')); ?>:
+	<?php echo GxHtml::encode($data->destaque); ?>
 	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('dataPublicacao')); ?>:</b>
-	<?php echo CHtml::encode($data->dataPublicacao); ?>
+	<?php echo GxHtml::encode($data->getAttributeLabel('dataPublicacao')); ?>:
+	<?php echo GxHtml::encode($data->dataPublicacao); ?>
 	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('idAutor')); ?>:</b>
-	<?php echo CHtml::encode($data->idAutor); ?>
+	<?php echo GxHtml::encode($data->getAttributeLabel('idAutor')); ?>:
+		<?php echo GxHtml::encode(GxHtml::valueEx($data->idAutor0)); ?>
 	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('idCategoria')); ?>:</b>
-	<?php echo CHtml::encode($data->idCategoria); ?>
+	<?php echo GxHtml::encode($data->getAttributeLabel('idCategoria')); ?>:
+		<?php echo GxHtml::encode(GxHtml::valueEx($data->idCategoria0)); ?>
 	<br />
-
 
 </div>

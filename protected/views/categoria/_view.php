@@ -1,21 +1,14 @@
-<?php
-/* @var $this CategoriaController */
-/* @var $data Categoria */
-?>
-
 <div class="view">
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
+	<?php echo GxHtml::encode($data->getAttributeLabel('id')); ?>:
+	<?php echo GxHtml::link(GxHtml::encode($data->id), array('view', 'id' => $data->id)); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('titulo')); ?>:</b>
-	<?php echo CHtml::encode($data->titulo); ?>
+	<?php echo GxHtml::encode($data->getAttributeLabel('titulo')); ?>:
+	<?php echo GxHtml::encode($data->titulo); ?>
 	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('ordem')); ?>:</b>
-	<?php echo CHtml::encode($data->ordem); ?>
+	<?php echo GxHtml::encode($data->getAttributeLabel('ordem')); ?>:
+	<?php echo GxHtml::encode($data->ordem); ?>
 	<br />
-
 
 </div>

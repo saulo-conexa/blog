@@ -1,29 +1,32 @@
 <?php
-/* @var $this ComentarioController */
-/* @var $model Comentario */
 
-$this->breadcrumbs=array(
-	'Comentarios'=>array('index'),
-	$model->id,
+$this->breadcrumbs = array(
+	$model->label(2) => array('index'),
+	GxHtml::valueEx($model),
 );
 
 $this->menu=array(
-	array('label'=>'List Comentario', 'url'=>array('index')),
-	array('label'=>'Create Comentario', 'url'=>array('create')),
-	array('label'=>'Update Comentario', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Comentario', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Comentario', 'url'=>array('admin')),
+	array('label'=>Yii::t('app', 'List') . ' ' . $model->label(2), 'url'=>array('index')),
+	array('label'=>Yii::t('app', 'Create') . ' ' . $model->label(), 'url'=>array('create')),
+	array('label'=>Yii::t('app', 'Update') . ' ' . $model->label(), 'url'=>array('update', 'id' => $model->id)),
+	array('label'=>Yii::t('app', 'Delete') . ' ' . $model->label(), 'url'=>'#', 'linkOptions' => array('submit' => array('delete', 'id' => $model->id), 'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>Yii::t('app', 'Manage') . ' ' . $model->label(2), 'url'=>array('admin')),
 );
 ?>
 
-<h1>View Comentario #<?php echo $model->id; ?></h1>
+<h1><?php echo Yii::t('app', 'View') . ' ' . GxHtml::encode($model->label()) . ' ' . GxHtml::encode(GxHtml::valueEx($model)); ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'id',
-		'texto',
-		'idPost',
-		'qtdCurtidas',
+	'data' => $model,
+	'attributes' => array(
+'id',
+'texto',
+array(
+			'name' => 'idPost0',
+			'type' => 'raw',
+			'value' => $model->idPost0 !== null ? GxHtml::link(GxHtml::encode(GxHtml::valueEx($model->idPost0)), array('post/view', 'id' => GxActiveRecord::extractPkValue($model->idPost0, true))) : null,
+			),
+'qtdCurtidas',
 	),
 )); ?>
+

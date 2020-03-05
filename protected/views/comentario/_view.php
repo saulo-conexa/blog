@@ -1,25 +1,17 @@
-<?php
-/* @var $this ComentarioController */
-/* @var $data Comentario */
-?>
-
 <div class="view">
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
+	<?php echo GxHtml::encode($data->getAttributeLabel('id')); ?>:
+	<?php echo GxHtml::link(GxHtml::encode($data->id), array('view', 'id' => $data->id)); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('texto')); ?>:</b>
-	<?php echo CHtml::encode($data->texto); ?>
+	<?php echo GxHtml::encode($data->getAttributeLabel('texto')); ?>:
+	<?php echo GxHtml::encode($data->texto); ?>
 	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('idPost')); ?>:</b>
-	<?php echo CHtml::encode($data->idPost); ?>
+	<?php echo GxHtml::encode($data->getAttributeLabel('idPost')); ?>:
+		<?php echo GxHtml::encode(GxHtml::valueEx($data->idPost0)); ?>
 	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('qtdCurtidas')); ?>:</b>
-	<?php echo CHtml::encode($data->qtdCurtidas); ?>
+	<?php echo GxHtml::encode($data->getAttributeLabel('qtdCurtidas')); ?>:
+	<?php echo GxHtml::encode($data->qtdCurtidas); ?>
 	<br />
-
 
 </div>

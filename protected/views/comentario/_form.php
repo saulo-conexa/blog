@@ -1,42 +1,37 @@
-<?php
-/* @var $this ComentarioController */
-/* @var $model Comentario */
-/* @var $form CActiveForm */
-?>
-
 <div class="form">
 
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'comentario-form',
-	'enableAjaxValidation'=>false,
-)); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+<?php $form = $this->beginWidget('GxActiveForm', array(
+	'id' => 'comentario-form',
+	'enableAjaxValidation' => false,
+));
+?>
+
+	<p class="note">
+		<?php echo Yii::t('app', 'Fields with'); ?> <span class="required">*</span> <?php echo Yii::t('app', 'are required'); ?>.
+	</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
+		<div class="row">
 		<?php echo $form->labelEx($model,'texto'); ?>
-		<?php echo $form->textField($model,'texto',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->textField($model, 'texto', array('maxlength' => 255)); ?>
 		<?php echo $form->error($model,'texto'); ?>
-	</div>
-
-	<div class="row">
+		</div><!-- row -->
+		<div class="row">
 		<?php echo $form->labelEx($model,'idPost'); ?>
-		<?php echo $form->textField($model,'idPost'); ?>
+		<?php echo $form->dropDownList($model, 'idPost', GxHtml::listDataEx(Post::model()->findAllAttributes(null, true))); ?>
 		<?php echo $form->error($model,'idPost'); ?>
-	</div>
-
-	<div class="row">
+		</div><!-- row -->
+		<div class="row">
 		<?php echo $form->labelEx($model,'qtdCurtidas'); ?>
-		<?php echo $form->textField($model,'qtdCurtidas'); ?>
+		<?php echo $form->textField($model, 'qtdCurtidas'); ?>
 		<?php echo $form->error($model,'qtdCurtidas'); ?>
-	</div>
+		</div><!-- row -->
 
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
-	</div>
 
-<?php $this->endWidget(); ?>
-
+<?php
+echo GxHtml::submitButton(Yii::t('app', 'Save'));
+$this->endWidget();
+?>
 </div><!-- form -->
