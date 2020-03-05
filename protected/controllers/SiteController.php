@@ -29,7 +29,17 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		$this->render('index');
+		$page = isset($_GET['page']) && is_int($_GET['page']) ? $_GET['page'] : 1;
+		$qtdPerRequest = 10;
+		$criteria=new CDbCriteria;
+		$criteria->order = "destaque = 1, id desc";
+		// $criteria->limit = $qtdPerRequest;
+		// $criteria->offset = $page * $qtdPerRequest;
+		$posts=Post::model()->findAll($criteria); // $params não é necessario
+
+		$this->render('index', array(
+			'posts' => $posts,
+		));
 	}
 
 	/**
@@ -44,6 +54,29 @@ class SiteController extends Controller
 			else
 				$this->render('error', $error);
 		}
+	}
+
+	/**
+	 * Displays the contact page
+	 */
+	public function actionPost()
+	{
+		$id = $_GET['id'];
+		$post = Post::model()->findByPk($id);
+		$criteria=new CDbCriteria;
+		$criteria->condition='id!=:id;idCategoria=:idCategoria';
+		$criteria->params=array(
+			':id' => $id,
+			':idCategoria' => $post->idCategoria,
+		);
+		$criteria->limit = 3;
+		$criteria->order = "destaque = 1, id desc";
+		$relacionadas = Post::model()->findAll($criteria);
+		$this->render('post', array(
+			'post' => $post,
+			'relacionadas' => $relacionadas
+			)
+		);
 	}
 
 	/**
