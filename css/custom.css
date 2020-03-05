@@ -1,0 +1,56 @@
+#header {
+    padding: 30px 20px;
+    border-top-color: #f9c36c;
+    position: relative;
+}
+
+#header div#user-menu-container {
+    position: absolute;
+    right: 20px;
+    top: 0;
+    padding: 10px 15px;
+    border-radius: 0 0 4px 4px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-top: 0;
+}
+
+#header div#user-menu-container a {
+    text-decoration: none;
+    font-size: 15px;
+    color: inherit;
+    display: flex;
+    align-items: flex-start;
+}
+
+#header div#user-menu-container a .user-info {
+    margin-left: 5px;
+}
+
+#header div#user-menu-container a .user-info p {
+    margin: 0;
+    line-height: 1;
+}
+
+#header div#user-menu-container a i.fa {
+    font-size: 32px;
+}
+
+#mainmenu {
+    background: #ea824b;
+}
+
+#mainmenu ul {
+    padding: 0 20px;
+}
+
+#mainmenu ul li a {
+    display: inline-block;
+    padding: 10px 15px;
+    transition: .3s;
+}
+
+#mainmenu ul li a:hover,
+#mainmenu ul li.active a {
+    color: #ea824b;
+    background: #fafafa;
+}
