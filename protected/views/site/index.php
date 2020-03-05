@@ -16,7 +16,7 @@ $this->pageTitle=Yii::app()->name;
 				<a href="<?=$this->createUrl('site/post', ['id' => $post->id])?>"><h3><?=$post->titulo?></h3></a>
 				<p><a href="#" class="badge"><?=$post->categoria->titulo?></a></p>
 				<p>
-					<?=substr($post->texto,0,300)?>... &nbsp;&nbsp;<a href="#">Ler mais</a>
+					<?=substr($post->texto,0,300)?>... &nbsp;&nbsp;<a href="<?=$this->createUrl('site/post', ['id' => $post->id])?>">Ler mais</a>
 				</p>
 				Escrito por: <a><?=$post->autor->nome?></a>
 			</div>
