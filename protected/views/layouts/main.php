@@ -12,8 +12,11 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection" />
 	<![endif]-->
 
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/custom.css" />
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
@@ -23,20 +26,45 @@
 <div class="container" id="page">
 
 	<div id="header">
-		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
+		<div id="logo">
+			<a href="/">
+				<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/conexa.png" alt="">
+			</a>
+		</div>
+		<div id="user-menu-container">
+			<?php if(Yii::app()->user->isGuest): ?>
+				<a href="/index.php?r=site/login">
+					<i class="fa fa-user-circle"></i>
+					<div class="user-info">
+						<p>Olá Visitante!</p>
+						<small>
+							<u>Fazer Login</u>
+						</small>
+					</div>
+				</a>
+			<?php else: ?>
+				<a href="/index.php?r=site/logout">
+					<i class="fa fa-user-circle" ></i>
+					<span>Olá <?=Yii::app()->user->name?>!</span>
+					<br>
+					<small>
+						<u>Sair</u>
+					</small>
+				</a>
+			<?php endif; ?>
+		</div>
 	</div><!-- header -->
 
 	<div id="mainmenu">
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
 				array('label'=>'Home', 'url'=>array('/site/index')),
-				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-				array('label'=>'Contact', 'url'=>array('/site/contact')),
-				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+				array('label'=>'Sobre', 'url'=>array('/site/page', 'view'=>'about')),
+				array('label'=>'Contato', 'url'=>array('/site/contact')),
 			),
 		)); ?>
 	</div><!-- mainmenu -->
+
 	<?php if(isset($this->breadcrumbs)):?>
 		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
 			'links'=>$this->breadcrumbs,
@@ -48,9 +76,9 @@
 	<div class="clear"></div>
 
 	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
-		All Rights Reserved.<br/>
-		<?php echo Yii::powered(); ?>
+		Copyright &copy; <?php echo date('Y'); ?> <br/>
+		Todos os direitos reservados.<br/>
+		Desenvolvido por <a href="http://conexa.app">Conexa.App</a>.
 	</div><!-- footer -->
 
 </div><!-- page -->

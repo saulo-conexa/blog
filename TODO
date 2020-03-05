@@ -1,27 +1,3 @@
-Tabelas:
-✔ Usuários @done(20-03-04 12:29)
-  ✔ Nome @done(20-03-04 11:49)
-  ✔ E-mail @done(20-03-04 11:49)
-  ✔ Senha @done(20-03-04 11:49)
-  ✔ Perfil @done(20-03-04 11:49)
-✔ Posts @done(20-03-04 12:34)
-  ✔ Título @done(20-03-04 12:25)
-  ✔ Conteúdo @done(20-03-04 12:25)
-  ✔ Destaque @done(20-03-04 12:25)
-  ✔ Data publicação @done(20-03-04 12:25)
-  ✔ Autor_id @done(20-03-04 12:25)
-  ✔ Categoria_id @done(20-03-04 12:25)
-  ✔ Quantidade de vizualição @done(20-03-04 12:25)
-✔ Autor @done(20-03-04 12:32)
-  ✔ Nome @done(20-03-04 12:25)
-  ✔ Link @done(20-03-04 12:25)
-  ✔ Sobre @done(20-03-04 12:25)
-✔ Comentários @done(20-03-04 12:34)
-  ✔ Curtidas @done(20-03-04 12:25)
-✔ Categorias: @done(20-03-04 12:29)
-  ✔ Ordenação @done(20-03-04 12:25)
-
-
 Home:
 ☐ Útlimos Posts (Resumo ?)
 ☐ Paginação ??
@@ -41,6 +17,3 @@ Regras:
 ☐ Apenas usuários logados podem comentar
 ☐ Preza UX
 ☐ Validações Front e Back
-
-Dúvidas:
-☐ Soft Delete?
