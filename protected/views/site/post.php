@@ -33,6 +33,7 @@ $this->breadcrumbs=array(
             <?=$post->autor->sobre?>
         </p>
     </div>
+    <?php if(count($relacionadas)): ?>
     <div class="relateds">
         <h4>
             Notícias Relacionada
@@ -46,6 +47,7 @@ $this->breadcrumbs=array(
             </a>
         <?php endforeach; ?>
     </div>
+    <?php endif; ?>
 </div>
 
 <style>

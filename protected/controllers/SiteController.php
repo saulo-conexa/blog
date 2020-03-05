@@ -64,7 +64,8 @@ class SiteController extends Controller
 		$id = $_GET['id'];
 		$post = Post::model()->findByPk($id);
 		$criteria=new CDbCriteria;
-		$criteria->condition='id!=:id;idCategoria=:idCategoria';
+		$criteria->addCondition('id!=:id','AND');
+		$criteria->addCondition('idCategoria=:idCategoria','AND');
 		$criteria->params=array(
 			':id' => $id,
 			':idCategoria' => $post->idCategoria,
