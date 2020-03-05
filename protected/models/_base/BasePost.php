@@ -52,8 +52,8 @@ abstract class BasePost extends GxActiveRecord {
 	public function relations() {
 		return array(
 			'comentarios' => array(self::HAS_MANY, 'Comentario', 'idPost'),
-			'idAutor0' => array(self::BELONGS_TO, 'Autor', 'idAutor'),
-			'idCategoria0' => array(self::BELONGS_TO, 'Categoria', 'idCategoria'),
+			'autor' => array(self::BELONGS_TO, 'Autor', 'idAutor'),
+			'categoria' => array(self::BELONGS_TO, 'Categoria', 'idCategoria'),
 		);
 	}
 
@@ -65,10 +65,10 @@ abstract class BasePost extends GxActiveRecord {
 	public function attributeLabels() {
 		return array(
 			'id' => Yii::t('app', 'ID'),
-			'titulo' => Yii::t('app', 'Titulo'),
+			'titulo' => Yii::t('app', 'Título'),
 			'texto' => Yii::t('app', 'Texto'),
 			'destaque' => Yii::t('app', 'Destaque'),
-			'dataPublicacao' => Yii::t('app', 'Data Publicacao'),
+			'dataPublicacao' => Yii::t('app', 'Data da Publicação'),
 			'idAutor' => null,
 			'idCategoria' => null,
 			'comentarios' => null,
