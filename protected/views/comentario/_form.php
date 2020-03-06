@@ -28,6 +28,11 @@
 		<?php echo $form->textField($model, 'qtdCurtidas'); ?>
 		<?php echo $form->error($model,'qtdCurtidas'); ?>
 		</div><!-- row -->
+		<div class="row">
+		<?php echo $form->labelEx($model,'idUsuario'); ?>
+		<?php echo $form->dropDownList($model, 'idUsuario', GxHtml::listDataEx(Usuario::model()->findAllAttributes(null, true))); ?>
+		<?php echo $form->error($model,'idUsuario'); ?>
+		</div><!-- row -->
 
 
 <?php

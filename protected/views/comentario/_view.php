@@ -13,5 +13,8 @@
 	<?php echo GxHtml::encode($data->getAttributeLabel('qtdCurtidas')); ?>:
 	<?php echo GxHtml::encode($data->qtdCurtidas); ?>
 	<br />
+	<?php echo GxHtml::encode($data->getAttributeLabel('idUsuario')); ?>:
+		<?php echo GxHtml::encode(GxHtml::valueEx($data->idUsuario0)); ?>
+	<br />
 
 </div>

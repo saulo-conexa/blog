@@ -13,8 +13,10 @@
  * @property string $texto
  * @property integer $idPost
  * @property integer $qtdCurtidas
+ * @property integer $idUsuario
  *
  * @property Post $idPost0
+ * @property Usuario $idUsuario0
  */
 abstract class BaseComentario extends GxActiveRecord {
 
@@ -36,16 +38,17 @@ abstract class BaseComentario extends GxActiveRecord {
 
 	public function rules() {
 		return array(
-			array('texto, idPost, qtdCurtidas', 'required'),
-			array('idPost, qtdCurtidas', 'numerical', 'integerOnly'=>true),
+			array('texto, idPost, qtdCurtidas, idUsuario', 'required'),
+			array('idPost, qtdCurtidas, idUsuario', 'numerical', 'integerOnly'=>true),
 			array('texto', 'length', 'max'=>255),
-			array('id, texto, idPost, qtdCurtidas', 'safe', 'on'=>'search'),
+			array('id, texto, idPost, qtdCurtidas, idUsuario', 'safe', 'on'=>'search'),
 		);
 	}
 
 	public function relations() {
 		return array(
 			'idPost0' => array(self::BELONGS_TO, 'Post', 'idPost'),
+			'idUsuario0' => array(self::BELONGS_TO, 'Usuario', 'idUsuario'),
 		);
 	}
 
@@ -60,7 +63,9 @@ abstract class BaseComentario extends GxActiveRecord {
 			'texto' => Yii::t('app', 'Texto'),
 			'idPost' => null,
 			'qtdCurtidas' => Yii::t('app', 'Qtd Curtidas'),
+			'idUsuario' => null,
 			'idPost0' => null,
+			'idUsuario0' => null,
 		);
 	}
 
@@ -71,6 +76,7 @@ abstract class BaseComentario extends GxActiveRecord {
 		$criteria->compare('texto', $this->texto, true);
 		$criteria->compare('idPost', $this->idPost);
 		$criteria->compare('qtdCurtidas', $this->qtdCurtidas);
+		$criteria->compare('idUsuario', $this->idUsuario);
 
 		return new CActiveDataProvider($this, array(
 			'criteria' => $criteria,

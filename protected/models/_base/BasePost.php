@@ -18,7 +18,6 @@
  * @property integer $idCategoria
  *
  * @property Comentario[] $comentarios
- * @property Autor $idAutor0
  * @property Categoria $idCategoria0
  */
 abstract class BasePost extends GxActiveRecord {
@@ -72,8 +71,8 @@ abstract class BasePost extends GxActiveRecord {
 			'idAutor' => null,
 			'idCategoria' => null,
 			'comentarios' => null,
-			'idAutor0' => null,
-			'idCategoria0' => null,
+			'autor' => null,
+			'categoria' => null,
 		);
 	}
 
