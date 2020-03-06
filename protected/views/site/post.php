@@ -9,10 +9,25 @@ $this->breadcrumbs=array(
 );
 ?>
 
-<div>
-	<h1><?=$post->titulo?></h1>
+<div class="conteudo">
+	<h1 class="titulo"><span><?=$post->titulo?></span></h1>
+    <p>Escrito por: <a><?=$post->autor->nome?></a> | <?=date('H:i d/m/Y',strtotime($post->dataPublicacao))?></p>
     <div class="post-content">
         <?=nl2br($post->texto)?>
+    </div>
+    <div class="comentarios">
+        <br>
+        <br>
+        <br>
+        <h4>Deixei aqui sua Opinião/Comentário</h4>
+        <form action="">
+            <textarea name="comentario" rows="4"></textarea>
+        </form>
+        <div>
+            <?php foreach($post->comentarios as $comentario): ?>
+                <p><?=$comentario->texto?></p>
+            <?php endforeach; ?>
+        </div>
     </div>
 </div>
 
@@ -51,12 +66,18 @@ $this->breadcrumbs=array(
 </div>
 
 <style>
+    h1.titulo{
+        border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+        line-height: 0;
+        margin-bottom: 2rem
+    }
+    h1.titulo span{
+        background: #fff;
+        padding: 5px 30px 5px 5px;
+    }
     .autor{
         text-align: center;
         margin-bottom: 40px
-    }
-    .autor h4{
-        text-align: left
     }
     .autor b{
         font-size: 15px
@@ -69,5 +90,8 @@ $this->breadcrumbs=array(
     }
     .relateds .related-post{
         color: inherit !important
+    }
+    textarea {
+        width: 100%;
     }
 </style>

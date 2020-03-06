@@ -8,7 +8,7 @@ $this->pageTitle=Yii::app()->name;
 	<div class="welcome">
 		<h2>Bem vindo ao nosso Blog.</h2>
 		<p>Aqui você encontrará algumas informações sobre nossos sistema, e aprenderá a tirar o melhor proveira de uma gestão integrada.</p>
-		<p>Abaixo estão algumas de nossas publicações recentes.</p>
+		<p>Abaixo estão algumas de nossas publicações recentes que devem te ajudar a usar nossa plataforma.</p>
 	</div>
 	<div class="post-list">
 		<?php foreach($posts as $post): ?>
@@ -18,7 +18,7 @@ $this->pageTitle=Yii::app()->name;
 				<p>
 					<?=substr($post->texto,0,300)?>... &nbsp;&nbsp;<a href="<?=$this->createUrl('site/post', ['id' => $post->id])?>">Ler mais</a>
 				</p>
-				Escrito por: <a><?=$post->autor->nome?></a>
+				Escrito por: <a><?=$post->autor->nome?></a> | <?=date('H:i d/m/Y',strtotime($post->dataPublicacao))?>
 			</div>
 		<?php endforeach; ?>
 	</div>
@@ -27,13 +27,11 @@ $this->pageTitle=Yii::app()->name;
 
 <div id="side-column">
 	<div class="categories">
+		<p><b>Categorias</b></p>
 		<ul>
-			<li><a href="#">Agenda</a></li>
-			<li><a href="#">Financeiro</a></li>
-			<li><a href="#">Integrações</a></li>
-			<li><a href="#">Parceiros</a></li>
-			<li><a href="#">Serviços</a></li>
-			<li><a href="#">Outros</a></li>
+			<?php foreach($categorias as $categoria): ?>
+				<li><a href="#"><?=$categoria->titulo?></a></li>
+			<?php endforeach; ?>
 		</ul>
 	</div>
 </div>
