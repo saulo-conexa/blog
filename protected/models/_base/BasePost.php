@@ -14,7 +14,7 @@
  * @property string $texto
  * @property integer $destaque
  * @property string $dataPublicacao
- * @property integer $idAutor
+ * @property integer $idUsuario
  * @property integer $idCategoria
  *
  * @property Comentario[] $comentarios
@@ -40,18 +40,18 @@ abstract class BasePost extends GxActiveRecord {
 
 	public function rules() {
 		return array(
-			array('titulo, texto, dataPublicacao, idAutor, idCategoria', 'required'),
-			array('destaque, idAutor, idCategoria', 'numerical', 'integerOnly'=>true),
+			array('titulo, texto, dataPublicacao, idUsuario, idCategoria', 'required'),
+			array('destaque, idUsuario, idCategoria', 'numerical', 'integerOnly'=>true),
 			array('titulo', 'length', 'max'=>255),
 			array('destaque', 'default', 'setOnEmpty' => true, 'value' => null),
-			array('id, titulo, texto, destaque, dataPublicacao, idAutor, idCategoria', 'safe', 'on'=>'search'),
+			array('id, titulo, texto, destaque, dataPublicacao, idUsuario, idCategoria', 'safe', 'on'=>'search'),
 		);
 	}
 
 	public function relations() {
 		return array(
-			'comentarios' => array(self::HAS_MANY, 'Comentario', 'idPost'),
-			'autor' => array(self::BELONGS_TO, 'Autor', 'idAutor'),
+			'comentarios' => array(self::HAS_MANY, 'Comentario', 'idPost', 'order' => 'qtdCurtidas DESC'),
+			'autor' => array(self::BELONGS_TO, 'Usuario', 'idUsuario'),
 			'categoria' => array(self::BELONGS_TO, 'Categoria', 'idCategoria'),
 		);
 	}
@@ -68,7 +68,7 @@ abstract class BasePost extends GxActiveRecord {
 			'texto' => Yii::t('app', 'Texto'),
 			'destaque' => Yii::t('app', 'Destaque'),
 			'dataPublicacao' => Yii::t('app', 'Data da Publicação'),
-			'idAutor' => null,
+			'idUsuario' => null,
 			'idCategoria' => null,
 			'comentarios' => null,
 			'autor' => null,
@@ -84,7 +84,7 @@ abstract class BasePost extends GxActiveRecord {
 		$criteria->compare('texto', $this->texto, true);
 		$criteria->compare('destaque', $this->destaque);
 		$criteria->compare('dataPublicacao', $this->dataPublicacao, true);
-		$criteria->compare('idAutor', $this->idAutor);
+		$criteria->compare('idUsuario', $this->idUsuario);
 		$criteria->compare('idCategoria', $this->idCategoria);
 
 		return new CActiveDataProvider($this, array(

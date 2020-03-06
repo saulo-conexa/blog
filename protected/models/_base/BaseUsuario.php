@@ -7,14 +7,17 @@
  * property or method in class "Usuario".
  *
  * Columns in table "usuario" available as properties of the model,
- * and there are no model relations.
+ * followed by relations of table "usuario" available as properties of the model.
  *
  * @property integer $id
  * @property string $nome
  * @property string $email
  * @property string $senha
- * @property string $biografia
+ * @property string $sobre
+ * @property string $linkExterno
  *
+ * @property Comentario[] $comentarios
+ * @property Post[] $posts
  */
 abstract class BaseUsuario extends GxActiveRecord {
 
@@ -36,16 +39,18 @@ abstract class BaseUsuario extends GxActiveRecord {
 
 	public function rules() {
 		return array(
-			array('nome, email, senha', 'required'),
+			array('nome, email, senha, linkExterno', 'required'),
 			array('nome, email, senha', 'length', 'max'=>100),
-			array('biografia', 'length', 'max'=>255),
-			array('biografia', 'default', 'setOnEmpty' => true, 'value' => null),
-			array('id, nome, email, senha, biografia', 'safe', 'on'=>'search'),
+			array('sobre, linkExterno', 'length', 'max'=>255),
+			array('sobre', 'default', 'setOnEmpty' => true, 'value' => null),
+			array('id, nome, email, senha, sobre, linkExterno', 'safe', 'on'=>'search'),
 		);
 	}
 
 	public function relations() {
 		return array(
+			'comentarios' => array(self::HAS_MANY, 'Comentario', 'idUsuario'),
+			'posts' => array(self::HAS_MANY, 'Post', 'idUsuario'),
 		);
 	}
 
@@ -60,7 +65,10 @@ abstract class BaseUsuario extends GxActiveRecord {
 			'nome' => Yii::t('app', 'Nome'),
 			'email' => Yii::t('app', 'Email'),
 			'senha' => Yii::t('app', 'Senha'),
-			'biografia' => Yii::t('app', 'Biografia'),
+			'sobre' => Yii::t('app', 'Sobre'),
+			'linkExterno' => Yii::t('app', 'Link Externo'),
+			'comentarios' => null,
+			'posts' => null,
 		);
 	}
 
@@ -71,7 +79,8 @@ abstract class BaseUsuario extends GxActiveRecord {
 		$criteria->compare('nome', $this->nome, true);
 		$criteria->compare('email', $this->email, true);
 		$criteria->compare('senha', $this->senha, true);
-		$criteria->compare('biografia', $this->biografia, true);
+		$criteria->compare('sobre', $this->sobre, true);
+		$criteria->compare('linkExterno', $this->linkExterno, true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria' => $criteria,

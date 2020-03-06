@@ -34,9 +34,9 @@
 		<?php echo $form->error($model,'dataPublicacao'); ?>
 		</div><!-- row -->
 		<div class="row">
-		<?php echo $form->labelEx($model,'idAutor'); ?>
-		<?php echo $form->dropDownList($model, 'idAutor', GxHtml::listDataEx(Autor::model()->findAllAttributes(null, true))); ?>
-		<?php echo $form->error($model,'idAutor'); ?>
+		<?php echo $form->labelEx($model,'idUsuario'); ?>
+		<?php echo $form->dropDownList($model, 'idUsuario', GxHtml::listDataEx(Autor::model()->findAllAttributes(null, true))); ?>
+		<?php echo $form->error($model,'idUsuario'); ?>
 		</div><!-- row -->
 		<div class="row">
 		<?php echo $form->labelEx($model,'idCategoria'); ?>

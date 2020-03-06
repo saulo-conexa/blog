@@ -23,7 +23,27 @@ $this->menu=array(
 'nome',
 'email',
 'senha',
-'biografia',
+'sobre',
+'linkExterno',
 	),
 )); ?>
 
+<h2><?php echo GxHtml::encode($model->getRelationLabel('comentarios')); ?></h2>
+<?php
+	echo GxHtml::openTag('ul');
+	foreach($model->comentarios as $relatedModel) {
+		echo GxHtml::openTag('li');
+		echo GxHtml::link(GxHtml::encode(GxHtml::valueEx($relatedModel)), array('comentario/view', 'id' => GxActiveRecord::extractPkValue($relatedModel, true)));
+		echo GxHtml::closeTag('li');
+	}
+	echo GxHtml::closeTag('ul');
+?><h2><?php echo GxHtml::encode($model->getRelationLabel('posts')); ?></h2>
+<?php
+	echo GxHtml::openTag('ul');
+	foreach($model->posts as $relatedModel) {
+		echo GxHtml::openTag('li');
+		echo GxHtml::link(GxHtml::encode(GxHtml::valueEx($relatedModel)), array('post/view', 'id' => GxActiveRecord::extractPkValue($relatedModel, true)));
+		echo GxHtml::closeTag('li');
+	}
+	echo GxHtml::closeTag('ul');
+?>

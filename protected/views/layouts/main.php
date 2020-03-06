@@ -43,14 +43,16 @@
 					</div>
 				</a>
 			<?php else: ?>
-				<a href="/index.php?r=site/logout">
+				<div>
 					<i class="fa fa-user-circle" ></i>
-					<span>Olá <?=Yii::app()->user->name?>!</span>
-					<br>
-					<small>
-						<u>Sair</u>
-					</small>
-				</a>
+					<div class="user-info">
+						<span>Olá <?=explode(' ', Yii::app()->session->get('nomeUsuario'))[0]?>!</span>
+						<br>
+						<a href="/index.php?r=site/logout">
+							<u>Sair</u>
+						</a>
+					</div>
+				</div>
 			<?php endif; ?>
 		</div>
 	</div><!-- header -->

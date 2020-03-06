@@ -31,8 +31,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model, 'idAutor'); ?>
-		<?php echo $form->dropDownList($model, 'idAutor', GxHtml::listDataEx(Autor::model()->findAllAttributes(null, true)), array('prompt' => Yii::t('app', 'All'))); ?>
+		<?php echo $form->label($model, 'idUsuario'); ?>
+		<?php echo $form->dropDownList($model, 'idUsuario', GxHtml::listDataEx(Autor::model()->findAllAttributes(null, true)), array('prompt' => Yii::t('app', 'All'))); ?>
 	</div>
 
 	<div class="row">

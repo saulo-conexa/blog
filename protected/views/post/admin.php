@@ -53,7 +53,7 @@ $('.search-form form').submit(function(){
 			),
 			'dataPublicacao',
 			array(
-				'name' => 'idAutor',
+				'name' => 'idUsuario',
 				'value' => 'GxHtml::valueEx($data->autor)',
 				'filter' => GxHtml::listDataEx(Autor::model()->findAllAttributes(null, true)),
 			),

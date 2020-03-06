@@ -10,6 +10,10 @@ a {
 	text-decoration: none;
 }
 
+p {
+	margin: 0 0 10px;
+}
+
 #page {
 	margin-top: 5px;
 	margin-bottom: 5px;
@@ -209,7 +213,7 @@ div.search-form {
 	border-top: 0;
 }
 
-#header div#user-menu-container a {
+#header div#user-menu-container > * {
 	text-decoration: none;
 	font-size: 15px;
 	color: inherit;
@@ -217,16 +221,16 @@ div.search-form {
 	align-items: flex-start;
 }
 
-#header div#user-menu-container a .user-info {
+#header div#user-menu-container > * .user-info {
 	margin-left: 5px;
 }
 
-#header div#user-menu-container a .user-info p {
+#header div#user-menu-container > * .user-info p {
 	margin: 0;
 	line-height: 1;
 }
 
-#header div#user-menu-container a i.fa {
+#header div#user-menu-container > * i.fa {
 	font-size: 32px;
 }
 

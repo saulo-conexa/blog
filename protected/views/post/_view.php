@@ -16,7 +16,7 @@
 	<?php echo GxHtml::encode($data->getAttributeLabel('dataPublicacao')); ?>:
 	<?php echo GxHtml::encode($data->dataPublicacao); ?>
 	<br />
-	<?php echo GxHtml::encode($data->getAttributeLabel('idAutor')); ?>:
+	<?php echo GxHtml::encode($data->getAttributeLabel('idUsuario')); ?>:
 		<?php echo GxHtml::encode(GxHtml::valueEx($data->autor)); ?>
 	<br />
 	<?php echo GxHtml::encode($data->getAttributeLabel('idCategoria')); ?>:

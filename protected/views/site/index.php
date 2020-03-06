@@ -18,7 +18,7 @@ $this->pageTitle=Yii::app()->name;
 				<p>
 					<?=substr($post->texto,0,300)?>... &nbsp;&nbsp;<a href="<?=$this->createUrl('site/post', ['id' => $post->id])?>">Ler mais</a>
 				</p>
-				Escrito por: <a><?=$post->autor->nome?></a> | <?=date('H:i d/m/Y',strtotime($post->dataPublicacao))?>
+				Escrito por: <?=$post->autor->nome?> | <?=date('H:i d/m/Y',strtotime($post->dataPublicacao))?>
 			</div>
 		<?php endforeach; ?>
 	</div>

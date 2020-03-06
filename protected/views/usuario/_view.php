@@ -13,8 +13,11 @@
 	<?php echo GxHtml::encode($data->getAttributeLabel('senha')); ?>:
 	<?php echo GxHtml::encode($data->senha); ?>
 	<br />
-	<?php echo GxHtml::encode($data->getAttributeLabel('biografia')); ?>:
-	<?php echo GxHtml::encode($data->biografia); ?>
+	<?php echo GxHtml::encode($data->getAttributeLabel('sobre')); ?>:
+	<?php echo GxHtml::encode($data->sobre); ?>
+	<br />
+	<?php echo GxHtml::encode($data->getAttributeLabel('linkExterno')); ?>:
+	<?php echo GxHtml::encode($data->linkExterno); ?>
 	<br />
 
 </div>

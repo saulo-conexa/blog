@@ -26,8 +26,13 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model, 'biografia'); ?>
-		<?php echo $form->textField($model, 'biografia', array('maxlength' => 255)); ?>
+		<?php echo $form->label($model, 'sobre'); ?>
+		<?php echo $form->textField($model, 'sobre', array('maxlength' => 255)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model, 'linkExterno'); ?>
+		<?php echo $form->textField($model, 'linkExterno', array('maxlength' => 255)); ?>
 	</div>
 
 	<div class="row buttons">

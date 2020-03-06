@@ -46,7 +46,8 @@ You may optionally enter a comparison operator (&lt;, &lt;=, &gt;, &gt;=, &lt;&g
 		'nome',
 		'email',
 		'senha',
-		'biografia',
+		'sobre',
+		'linkExterno',
 		array(
 			'class' => 'CButtonColumn',
 		),

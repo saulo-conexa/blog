@@ -46,7 +46,7 @@ abstract class BaseAutor extends GxActiveRecord {
 
 	public function relations() {
 		return array(
-			'posts' => array(self::HAS_MANY, 'Post', 'idAutor'),
+			'posts' => array(self::HAS_MANY, 'Post', 'idUsuario'),
 		);
 	}
 
