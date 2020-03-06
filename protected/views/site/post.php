@@ -23,8 +23,12 @@ $this->breadcrumbs=array(
         <form action="">
             <textarea name="comentario" rows="4"></textarea>
         </form>
+        <br>
+        <br>
+        <br>
         <div>
             <?php foreach($post->comentarios as $comentario): ?>
+                <p><?=$comentario->usuario->nome?></p>
                 <p><?=$comentario->texto?></p>
             <?php endforeach; ?>
         </div>
