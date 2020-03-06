@@ -17,10 +17,10 @@
 	<?php echo GxHtml::encode($data->dataPublicacao); ?>
 	<br />
 	<?php echo GxHtml::encode($data->getAttributeLabel('idAutor')); ?>:
-		<?php echo GxHtml::encode(GxHtml::valueEx($data->idAutor0)); ?>
+		<?php echo GxHtml::encode(GxHtml::valueEx($data->autor)); ?>
 	<br />
 	<?php echo GxHtml::encode($data->getAttributeLabel('idCategoria')); ?>:
-		<?php echo GxHtml::encode(GxHtml::valueEx($data->idCategoria0)); ?>
+		<?php echo GxHtml::encode(GxHtml::valueEx($data->categoria)); ?>
 	<br />
 
 </div>

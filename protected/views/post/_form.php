@@ -30,7 +30,7 @@
 		</div><!-- row -->
 		<div class="row">
 		<?php echo $form->labelEx($model,'dataPublicacao'); ?>
-		<?php echo $form->textField($model, 'dataPublicacao'); ?>
+		<input name="Post[dataPublicacao]" id="Post_dataPublicacao" type="datetime-local">
 		<?php echo $form->error($model,'dataPublicacao'); ?>
 		</div><!-- row -->
 		<div class="row">
