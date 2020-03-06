@@ -32,13 +32,18 @@ class SiteController extends Controller
 		$page = isset($_GET['page']) && is_int($_GET['page']) ? $_GET['page'] : 1;
 		$qtdPerRequest = 10;
 		$criteria=new CDbCriteria;
-		$criteria->order = "destaque = 1, id desc";
+		$criteria->order = "destaque DESC, id DESC";
 		// $criteria->limit = $qtdPerRequest;
 		// $criteria->offset = $page * $qtdPerRequest;
 		$posts=Post::model()->findAll($criteria); // $params não é necessario
+		
+		$criteriaCategoria = new CDbCriteria();
+		$criteriaCategoria->order = 'ordem asc, id asc';
+		$categorias=Categoria::model()->findAll($criteriaCategoria); // $params não é necessario
 
 		$this->render('index', array(
 			'posts' => $posts,
+			'categorias' => $categorias,
 		));
 	}
 
