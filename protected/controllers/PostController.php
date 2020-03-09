@@ -12,7 +12,6 @@ class PostController extends GxController {
 	public function actionCreate() {
 		$model = new Post;
 
-
 		if (isset($_POST['Post'])) {
 			$model->setAttributes($_POST['Post']);
 

@@ -14,6 +14,14 @@ p {
 	margin: 0 0 10px;
 }
 
+input,
+select {
+	border: 0;
+	padding: 5px;
+	border-bottom: 2px solid;
+	border-radius: 2px;
+}
+
 #page {
 	margin-top: 5px;
 	margin-bottom: 5px;
@@ -23,8 +31,42 @@ p {
 
 #header {
 	margin: 0;
-	padding: 0;
 	border-top: 3px solid #C9E0ED;
+	min-height: 80px;
+	padding: 30px 20px;
+	border-top-color: #f9c36c;
+	position: relative;
+}
+
+#header div#user-menu-container {
+	position: absolute;
+	right: 20px;
+	top: 0;
+	padding: 10px 15px;
+	border-radius: 0 0 4px 4px;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	border-top: 0;
+}
+
+#header div#user-menu-container>* {
+	text-decoration: none;
+	font-size: 15px;
+	color: inherit;
+	display: flex;
+	align-items: flex-start;
+}
+
+#header div#user-menu-container>* .user-info {
+	margin-left: 5px;
+}
+
+#header div#user-menu-container>* .user-info p {
+	margin: 0;
+	line-height: 1;
+}
+
+#header div#user-menu-container>* i.fa {
+	font-size: 32px;
 }
 
 #content {
@@ -96,7 +138,7 @@ div.flash-success {
 	background: #E6EFC2;
 	color: #264409;
 	border-color: #C6D880;
-    margin-bottom: 30px;
+	margin-bottom: 30px;
 }
 
 div.flash-error a {
@@ -198,43 +240,6 @@ div.search-form {
 	background: #80CFFF;
 }
 
-#header {
-	padding: 30px 20px;
-	border-top-color: #f9c36c;
-	position: relative;
-}
-
-#header div#user-menu-container {
-	position: absolute;
-	right: 20px;
-	top: 0;
-	padding: 10px 15px;
-	border-radius: 0 0 4px 4px;
-	border: 1px solid rgba(0, 0, 0, 0.15);
-	border-top: 0;
-}
-
-#header div#user-menu-container>* {
-	text-decoration: none;
-	font-size: 15px;
-	color: inherit;
-	display: flex;
-	align-items: flex-start;
-}
-
-#header div#user-menu-container>* .user-info {
-	margin-left: 5px;
-}
-
-#header div#user-menu-container>* .user-info p {
-	margin: 0;
-	line-height: 1;
-}
-
-#header div#user-menu-container>* i.fa {
-	font-size: 32px;
-}
-
 #mainmenu {
 	background: #ea824b;
 }
@@ -286,21 +291,22 @@ div.search-form {
 	color: #fff;
 }
 
-.categories p {
+.custom-list p {
 	font-size: 15px;
 }
 
-.categories ul {
+.custom-list ul {
 	list-style: none;
+	margin: 0;
 }
 
-.categories ul li {
+.custom-list ul li {
 	margin-bottom: 10px;
 	position: relative;
 	display: flex;
 }
 
-.categories ul li:before {
+.custom-list ul li:before {
 	content: '➡';
 	color: #ea824b;
 	display: inline-block;
@@ -308,15 +314,20 @@ div.search-form {
 	transition: .3s;
 }
 
-.categories ul li:hover:before {
+.custom-list ul li:hover:before {
 	transform: translateX(-5px);
 }
 
-.categories ul li a {
+.custom-list ul li a {
 	font-size: 15px;
 	color: inherit;
 	display: inline-block;
 	width: 100%;
+}
+
+.custom-list ul li a.active {
+	color: #ea824b;
+	font-weight: bold;
 }
 
 input[type="submit"],

@@ -22,6 +22,50 @@ class SiteController extends Controller
 	}
 
 	/**
+	 * @return array action filters
+	 */
+	public function filters()
+	{
+		return array(
+			'accessControl', // perform access control for CRUD operations
+		);
+	}
+
+	/**
+	 * Specifies the access control rules.
+	 * This method is used by the 'accessControl' filter.
+	 * @return array access control rules
+	 */
+	public function accessRules()
+	{
+		return array(
+			array(
+				'allow',  // allow all users to access 'index' and 'view' actions.
+				'actions' => array('index', 'view'),
+				'users' => array('*'),
+			),
+			array(
+				'allow',  // allow all users to access 'index' and 'view' actions.
+				'actions' => array('login', 'view'),
+				'users' => array('*'),
+			),
+			array(
+				'allow',  // allow all users to access 'index' and 'view' actions.
+				'actions' => array('post', 'view'),
+				'users' => array('*'),
+			),
+			array(
+				'allow', // allow authenticated users to access all actions
+				'users' => array('@'),
+			),
+			array(
+				'deny',  // deny all users
+				'users' => array('*'),
+			),
+		);
+	}
+
+	/**
 	 * This is the default 'index' action that is invoked
 	 * when an action is not explicitly requested by users.
 	 */
@@ -29,13 +73,25 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		$page = isset($_GET['page']) && is_int($_GET['page']) ? $_GET['page'] : 1;
-		$qtdPerRequest = 10;
+		$idCategoria = isset($_GET['categoria']) ? $_GET['categoria'] : false;
 		$criteria = new CDbCriteria;
-		$criteria->order = "destaque DESC, id DESC";
+		if ($idCategoria) {
+			$criteria->addCondition('idCategoria=:idCategoria', 'AND');
+			$criteria->params = array(
+				':idCategoria' => $idCategoria,
+			);
+		}
+
+		// $pageno = isset($_GET['pageno']) ? $_GET['pageno'] : 1;
+		// $qtdPerRequest = 2;
+		// $criteria->order = "destaque DESC, id DESC";
 		// $criteria->limit = $qtdPerRequest;
-		// $criteria->offset = $page * $qtdPerRequest;
+		// $criteria->offset = $pageno * $qtdPerRequest;
+
 		$posts = Post::model()->findAll($criteria); // $params não é necessario
+
+		// $countPosts = Post::model()->count();
+		// $total_pages = ceil($countPosts / $qtdPerRequest);
 
 		$criteriaCategoria = new CDbCriteria();
 		$criteriaCategoria->order = 'ordem asc, id asc';
@@ -43,8 +99,41 @@ class SiteController extends Controller
 
 		$this->render('index', array(
 			'posts' => $posts,
+			// 'pageno' => $pageno,
+			// 'total_pages' => $total_pages,
 			'categorias' => $categorias,
 		));
+	}
+
+	public function actionNovoPost()
+	{
+		$criteriaCategoria = new CDbCriteria();
+		$criteriaCategoria->order = 'ordem asc, id asc';
+		$categorias = Categoria::model()->findAll($criteriaCategoria); // $params não é necessario
+		$model = new Post;
+
+		if (!empty($_POST)) {
+			$data = [
+				'titulo' => $_POST['titulo'],
+				'texto' => $_POST['texto'],
+				'destaque' => '0',
+				'dataPublicacao' => date('Y-m-d H:i:s'),
+				'idCategoria' => $_POST['idCategoria'],
+				'idUsuario' => Yii::app()->session->get('idUsuario'),
+			];
+
+			$model->setAttributes($data);
+			if ($model->save()) {
+				Yii::app()->user->setFlash('postEnviado', 'Obrigado pela contribuição :)');
+				$id = $model->id;
+				$this->redirect($this->createUrl('site/post', ['id' => $id]));
+			}
+		}
+
+		$this->render('novoPost', [
+			'model' => $model,
+			'categorias' => $categorias,
+		]);
 	}
 
 	/**
@@ -111,8 +200,8 @@ class SiteController extends Controller
 	public function actionCurtir()
 	{
 		$comentario = Comentario::model()->findByPk($_POST['id']);
-		$comentario->qtdCurtidas+=1;
-		if($comentario->save())
+		$comentario->qtdCurtidas += 1;
+		if ($comentario->save())
 			die('success');
 		die('error');
 	}

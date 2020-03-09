@@ -8,6 +8,7 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Blog Conexa.App',
+	'language' => 'pt_br',
 
 	// preloading 'log' component
 	'preload'=>array('log'),

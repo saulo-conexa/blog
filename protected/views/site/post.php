@@ -16,6 +16,12 @@ $this->breadcrumbs = array(
             <?= Yii::app()->user->getFlash('comentarioEnviado') ?>
         </div>
     <?php endif; ?>
+    <?php if(Yii::app()->user->hasFlash('postEnviado')): ?>
+        <div class="flash-success">
+            <b>Publicação enviada: </b>
+            <?= Yii::app()->user->getFlash('postEnviado') ?>
+        </div>
+    <?php endif; ?>
     <h1 class="titulo"><span><?= $post->titulo ?></span></h1>
     <p>Escrito por: <?= $post->autor->nome ?> | <?= date('H:i d/m/Y', strtotime($post->dataPublicacao)) ?></p>
     <div class="post-content">

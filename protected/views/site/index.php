@@ -1,7 +1,7 @@
 <?php
 /* @var $this SiteController */
 
-$this->pageTitle=Yii::app()->name;
+$this->pageTitle = Yii::app()->name;
 ?>
 
 <div class="blog-content">
@@ -10,27 +10,45 @@ $this->pageTitle=Yii::app()->name;
 		<p>Aqui você encontrará algumas informações sobre nossos sistema, e aprenderá a tirar o melhor proveira de uma gestão integrada.</p>
 		<p>Abaixo estão algumas de nossas publicações recentes que devem te ajudar a usar nossa plataforma.</p>
 	</div>
-	<div class="post-list">
-		<?php foreach($posts as $post): ?>
-			<div class="post">
-				<a href="<?=$this->createUrl('site/post', ['id' => $post->id])?>"><h3><?=$post->titulo?></h3></a>
-				<p><a href="#" class="badge"><?=$post->categoria->titulo?></a></p>
-				<p>
-					<?=substr($post->texto,0,300)?>... &nbsp;&nbsp;<a href="<?=$this->createUrl('site/post', ['id' => $post->id])?>">Ler mais</a>
-				</p>
-				Escrito por: <?=$post->autor->nome?> | <?=date('H:i d/m/Y',strtotime($post->dataPublicacao))?>
-			</div>
-		<?php endforeach; ?>
-	</div>
+	<?php if (count($posts)) : ?>
+		<div class="post-list">
+			<?php foreach ($posts as $post) : ?>
+				<div class="post">
+					<a href="<?= $this->createUrl('site/post', ['id' => $post->id]) ?>">
+						<h3><?= $post->titulo ?></h3>
+					</a>
+					<p><a href="#" class="badge"><?= $post->categoria->titulo ?></a></p>
+					<p>
+						<?= substr($post->texto, 0, 300) ?>... &nbsp;&nbsp;<a href="<?= $this->createUrl('site/post', ['id' => $post->id]) ?>">Ler mais</a>
+					</p>
+					Escrito por: <?= $post->autor->nome ?> | <?= date('H:i d/m/Y', strtotime($post->dataPublicacao)) ?>
+				</div>
+			<?php endforeach; ?>
+		</div>
+	<?php else : ?>
+		<h4>Ainda não há publicações dessa categoria.. :(</h4>
+		<?php if (!Yii::app()->user->isGuest) : ?>
+			<a href="<?= $this->createUrl('site/novoPost') ?>">Que tal escrever algo Sobre?</a>
+		<?php endif; ?>
+	<?php endif; ?>
 </div>
 
 
 <div id="side-column">
-	<div class="categories">
+	<div class="custom-list">
 		<p><b>Categorias</b></p>
 		<ul>
-			<?php foreach($categorias as $categoria): ?>
-				<li><a href="#"><?=$categoria->titulo?></a></li>
+			<?php foreach ($categorias as $categoria) : ?>
+				<li>
+					<a 
+						<?php 
+							if(isset($_GET['categoria']) && $_GET['categoria'] == $categoria->id) 
+							echo 'class="active"'
+						?>
+							href="<?= $this->createUrl('site/index', ['categoria' => $categoria->id]) ?>">
+						<?= $categoria->titulo ?>
+					</a>
+				</li>
 			<?php endforeach; ?>
 		</ul>
 	</div>

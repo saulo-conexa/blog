@@ -49,13 +49,6 @@ $this->breadcrumbs = array(
 </div>
 
 <style>
-	input {
-		border: 0;
-		padding: 5px;
-		border-bottom: 2px solid;
-		border-radius: 2px;
-	}
-
 	div.form .hint {
 		margin: 10px 0
 	}
