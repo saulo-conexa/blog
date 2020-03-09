@@ -1696,3 +1696,85 @@ Stack trace:
 #7 /home/saulo/Documentos/Projetos/blog/index.php(13): CWebApplication->run()
 REQUEST_URI=/index.php?r=site/login
 in /home/saulo/Documentos/Projetos/blog/index.php (13)
+2020/03/09 12:06:52 [error] [php] Undefined variable: model (/home/saulo/Documentos/Projetos/blog/protected/controllers/SiteController.php:216)
+Stack trace:
+#0 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(134): SiteController->runAction()
+#1 /home/saulo/YiiRoot/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#2 /home/saulo/YiiRoot/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#3 /home/saulo/YiiRoot/framework/web/filters/CInlineFilter.php(59): SiteController->filterAccessControl()
+#4 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#5 /home/saulo/YiiRoot/framework/web/CController.php(292): CFilterChain->run()
+#6 /home/saulo/YiiRoot/framework/web/CController.php(266): SiteController->runActionWithFilters()
+#7 /home/saulo/YiiRoot/framework/web/CWebApplication.php(283): SiteController->run()
+#8 /home/saulo/YiiRoot/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#9 /home/saulo/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /home/saulo/Documentos/Projetos/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/cadastro
+in /home/saulo/Documentos/Projetos/blog/protected/controllers/SiteController.php (216)
+in /home/saulo/Documentos/Projetos/blog/index.php (13)
+2020/03/09 12:08:59 [error] [system.db.CDbCommand] Falha ao executar CDbCommand::execute(): SQLSTATE[HY000]: General error: 1364 Field 'linkExterno' doesn't have a default value. A declaração SQL executada foi: INSERT INTO `usuario` (`nome`, `email`, `sobre`, `senha`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in /home/saulo/Documentos/Projetos/blog/protected/controllers/SiteController.php (211)
+in /home/saulo/Documentos/Projetos/blog/index.php (13)
+2020/03/09 12:08:59 [error] [exception.CDbException] CDbException: CDbCommand falhou ao executar o comando SQL: SQLSTATE[HY000]: General error: 1364 Field 'linkExterno' doesn't have a default value. The SQL statement executed was: INSERT INTO `usuario` (`nome`, `email`, `sobre`, `senha`) VALUES (:yp0, :yp1, :yp2, :yp3) in /home/saulo/YiiRoot/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /home/saulo/YiiRoot/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /home/saulo/YiiRoot/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /home/saulo/Documentos/Projetos/blog/protected/controllers/SiteController.php(211): CActiveRecord->save()
+#3 /home/saulo/YiiRoot/framework/web/actions/CInlineAction.php(50): SiteController->actionCadastro()
+#4 /home/saulo/YiiRoot/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /home/saulo/YiiRoot/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /home/saulo/YiiRoot/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 /home/saulo/YiiRoot/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /home/saulo/YiiRoot/framework/web/CController.php(292): CFilterChain->run()
+#11 /home/saulo/YiiRoot/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/saulo/YiiRoot/framework/web/CWebApplication.php(283): CController->run('cadastro')
+#13 /home/saulo/YiiRoot/framework/web/CWebApplication.php(142): CWebApplication->runController('site/cadastro')
+#14 /home/saulo/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /home/saulo/Documentos/Projetos/blog/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php?r=site/cadastro
+HTTP_REFERER=http://localhost:8000/index.php?r=site/cadastro
+---
+2020/03/09 12:10:14 [error] [system.db.CDbCommand] Falha ao executar CDbCommand::execute(): SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'Thiago Oliveira Araújo' for key 'nome_2'. A declaração SQL executada foi: INSERT INTO `usuario` (`nome`, `email`, `sobre`, `senha`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in /home/saulo/Documentos/Projetos/blog/protected/controllers/SiteController.php (211)
+in /home/saulo/Documentos/Projetos/blog/index.php (13)
+2020/03/09 12:10:14 [error] [exception.CDbException] CDbException: CDbCommand falhou ao executar o comando SQL: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'Thiago Oliveira Araújo' for key 'nome_2'. The SQL statement executed was: INSERT INTO `usuario` (`nome`, `email`, `sobre`, `senha`) VALUES (:yp0, :yp1, :yp2, :yp3) in /home/saulo/YiiRoot/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /home/saulo/YiiRoot/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /home/saulo/YiiRoot/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /home/saulo/Documentos/Projetos/blog/protected/controllers/SiteController.php(211): CActiveRecord->save()
+#3 /home/saulo/YiiRoot/framework/web/actions/CInlineAction.php(50): SiteController->actionCadastro()
+#4 /home/saulo/YiiRoot/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /home/saulo/YiiRoot/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /home/saulo/YiiRoot/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 /home/saulo/YiiRoot/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /home/saulo/YiiRoot/framework/web/CController.php(292): CFilterChain->run()
+#11 /home/saulo/YiiRoot/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/saulo/YiiRoot/framework/web/CWebApplication.php(283): CController->run('cadastro')
+#13 /home/saulo/YiiRoot/framework/web/CWebApplication.php(142): CWebApplication->runController('site/cadastro')
+#14 /home/saulo/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /home/saulo/Documentos/Projetos/blog/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php?r=site/cadastro
+HTTP_REFERER=http://localhost:8000/index.php?r=site/cadastro
+---
+2020/03/09 12:32:24 [error] [php] Undefined index: id (/home/saulo/Documentos/Projetos/blog/protected/controllers/SiteController.php:203)
+Stack trace:
+#0 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(134): SiteController->runAction()
+#1 /home/saulo/YiiRoot/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#2 /home/saulo/YiiRoot/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#3 /home/saulo/YiiRoot/framework/web/filters/CInlineFilter.php(59): SiteController->filterAccessControl()
+#4 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#5 /home/saulo/YiiRoot/framework/web/CController.php(292): CFilterChain->run()
+#6 /home/saulo/YiiRoot/framework/web/CController.php(266): SiteController->runActionWithFilters()
+#7 /home/saulo/YiiRoot/framework/web/CWebApplication.php(283): SiteController->run()
+#8 /home/saulo/YiiRoot/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#9 /home/saulo/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /home/saulo/Documentos/Projetos/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/meusDados
+in /home/saulo/Documentos/Projetos/blog/protected/controllers/SiteController.php (203)
+in /home/saulo/Documentos/Projetos/blog/index.php (13)

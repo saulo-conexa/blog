@@ -57,7 +57,7 @@
 					<br>
 					<div class="custom-list">
 						<ul>
-							<!-- <li><a href="#">Meus Dados</a></li> -->
+							<li><a href="<?=$this->createUrl('site/meusDados')?>">Meus Dados</a></li>
 							<li><a href="<?=$this->createUrl('site/novoPost')?>">Criar Post</a></li>
 						</ul>
 					</div>
@@ -69,7 +69,7 @@
 			<?php $this->widget('zii.widgets.CMenu', array(
 				'items' => array(
 					array('label' => 'Home', 'url' => array('/site/index')),
-					array('label' => 'Sobre', 'url' => array('/site/page', 'view' => 'about')),
+					// array('label' => 'Sobre', 'url' => array('/site/page', 'view' => 'about')),
 					// array('label'=>'Contato', 'url'=>array('/site/contact')),
 				),
 			)); ?>

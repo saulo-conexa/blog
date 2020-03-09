@@ -11,6 +11,13 @@ $this->breadcrumbs = array(
 
 <div>
 
+	<?php if (Yii::app()->user->hasFlash('usuarioCadasatrado')) : ?>
+		<div class="flash-success">
+			<b>Cadastrado com Sucesso:  </b>
+			<?= Yii::app()->user->getFlash('usuarioCadasatrado') ?>
+		</div>
+	<?php endif; ?>
+
 	<h1>Login</h1>
 
 	<div class="form">
@@ -35,8 +42,7 @@ $this->breadcrumbs = array(
 			<?php echo $form->passwordField($model, 'senha'); ?>
 			<?php echo $form->error($model, 'senha'); ?>
 			<p class="hint">
-				Para se cadastrar <a href="<?= $this->createUrl('site/contato') ?>">Entre em contato.</a>
-				<br>Informando seu e-mail, senha e falando um pouco sobre você.
+				Ainda não tem cadastro? <a href="<?= $this->createUrl('site/cadastro') ?>">Clique Aqui.</a>
 			</p>
 		</div>
 

@@ -19,47 +19,55 @@
  * @property Comentario[] $comentarios
  * @property Post[] $posts
  */
-abstract class BaseUsuario extends GxActiveRecord {
+abstract class BaseUsuario extends GxActiveRecord
+{
 
-	public static function model($className=__CLASS__) {
+	public static function model($className = __CLASS__)
+	{
 		return parent::model($className);
 	}
 
-	public function tableName() {
+	public function tableName()
+	{
 		return 'usuario';
 	}
 
-	public static function label($n = 1) {
+	public static function label($n = 1)
+	{
 		return Yii::t('app', 'Usuario|Usuarios', $n);
 	}
 
-	public static function representingColumn() {
+	public static function representingColumn()
+	{
 		return 'nome';
 	}
 
-	public function rules() {
+	public function rules()
+	{
 		return array(
-			array('nome, email, senha, linkExterno', 'required'),
-			array('nome, email, senha', 'length', 'max'=>100),
-			array('sobre, linkExterno', 'length', 'max'=>255),
+			array('nome, email, senha', 'required'),
+			array('nome, email, senha', 'length', 'max' => 100),
+			array('sobre, linkExterno', 'length', 'max' => 255),
 			array('sobre', 'default', 'setOnEmpty' => true, 'value' => null),
-			array('id, nome, email, senha, sobre, linkExterno', 'safe', 'on'=>'search'),
+			array('id, nome, email, senha, sobre, linkExterno', 'safe', 'on' => 'search'),
 		);
 	}
 
-	public function relations() {
+	public function relations()
+	{
 		return array(
 			'comentarios' => array(self::HAS_MANY, 'Comentario', 'idUsuario'),
 			'posts' => array(self::HAS_MANY, 'Post', 'idUsuario'),
 		);
 	}
 
-	public function pivotModels() {
-		return array(
-		);
+	public function pivotModels()
+	{
+		return array();
 	}
 
-	public function attributeLabels() {
+	public function attributeLabels()
+	{
 		return array(
 			'id' => Yii::t('app', 'ID'),
 			'nome' => Yii::t('app', 'Nome'),
@@ -72,7 +80,8 @@ abstract class BaseUsuario extends GxActiveRecord {
 		);
 	}
 
-	public function search() {
+	public function search()
+	{
 		$criteria = new CDbCriteria;
 
 		$criteria->compare('id', $this->id);

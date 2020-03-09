@@ -339,3 +339,26 @@ button[type="submit"] {
 	color: #fff;
 	cursor: pointer
 }
+
+.form-busca {
+	margin-bottom: 15px;
+}
+
+.form-busca .input-group {
+	position: relative;
+	border: 1px solid rgba(0, 0, 0, 0.35);
+	border-radius: 4px;
+	overflow: hidden;
+}
+
+.form-busca .input-group input{
+	border-bottom: 0;
+}
+
+.form-busca .input-group button {
+	position: absolute;
+	top: 0;
+	right: 0;
+	border: 0;
+	border-radius: 0 2px 2px 0;
+}

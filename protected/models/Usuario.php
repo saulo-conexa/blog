@@ -5,8 +5,8 @@ Yii::import('application.models._base.BaseUsuario');
 class Usuario extends BaseUsuario
 {
 	
-	protected $senha;
-	protected $hash;
+	public $senha;
+	public $hash;
 
 	public static function model($className=__CLASS__) {
 		return parent::model($className);

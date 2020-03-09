@@ -36,6 +36,13 @@ $this->pageTitle = Yii::app()->name;
 
 <div id="side-column">
 	<div class="custom-list">
+		<p><b>Filtros</b></p>
+		<form class="form-busca" action="/">
+			<div class="input-group">
+				<input type="text" name="q">
+				<button type="submit"><i class="fa fa-search"></i></button>
+			</div>
+		</form>
 		<p><b>Categorias</b></p>
 		<ul>
 			<?php foreach ($categorias as $categoria) : ?>
