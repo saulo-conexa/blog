@@ -28,9 +28,9 @@ array(
 			),
 'qtdCurtidas',
 array(
-			'name' => 'usuario',
+			'name' => 'idUsuario0',
 			'type' => 'raw',
-			'value' => $model->usuario !== null ? GxHtml::link(GxHtml::encode(GxHtml::valueEx($model->usuario)), array('usuario/view', 'id' => GxActiveRecord::extractPkValue($model->usuario, true))) : null,
+			'value' => $model->idUsuario0 !== null ? GxHtml::link(GxHtml::encode(GxHtml::valueEx($model->idUsuario0)), array('usuario/view', 'id' => GxActiveRecord::extractPkValue($model->idUsuario0, true))) : null,
 			),
 	),
 )); ?>

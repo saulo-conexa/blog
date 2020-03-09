@@ -52,7 +52,7 @@ You may optionally enter a comparison operator (&lt;, &lt;=, &gt;, &gt;=, &lt;&g
 		'qtdCurtidas',
 		array(
 				'name'=>'idUsuario',
-				'value'=>'GxHtml::valueEx($data->usuario)',
+				'value'=>'GxHtml::valueEx($data->idUsuario0)',
 				'filter'=>GxHtml::listDataEx(Usuario::model()->findAllAttributes(null, true)),
 				),
 		array(
