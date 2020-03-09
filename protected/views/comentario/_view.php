@@ -8,13 +8,13 @@
 	<?php echo GxHtml::encode($data->texto); ?>
 	<br />
 	<?php echo GxHtml::encode($data->getAttributeLabel('idPost')); ?>:
-		<?php echo GxHtml::encode(GxHtml::valueEx($data->idPost0)); ?>
+		<?php echo GxHtml::encode(GxHtml::valueEx($data->post)); ?>
 	<br />
 	<?php echo GxHtml::encode($data->getAttributeLabel('qtdCurtidas')); ?>:
 	<?php echo GxHtml::encode($data->qtdCurtidas); ?>
 	<br />
 	<?php echo GxHtml::encode($data->getAttributeLabel('idUsuario')); ?>:
-		<?php echo GxHtml::encode(GxHtml::valueEx($data->idUsuario0)); ?>
+		<?php echo GxHtml::encode(GxHtml::valueEx($data->usuario)); ?>
 	<br />
 
 </div>

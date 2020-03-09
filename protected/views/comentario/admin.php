@@ -46,13 +46,13 @@ You may optionally enter a comparison operator (&lt;, &lt;=, &gt;, &gt;=, &lt;&g
 		'texto',
 		array(
 				'name'=>'idPost',
-				'value'=>'GxHtml::valueEx($data->idPost0)',
+				'value'=>'GxHtml::valueEx($data->post)',
 				'filter'=>GxHtml::listDataEx(Post::model()->findAllAttributes(null, true)),
 				),
 		'qtdCurtidas',
 		array(
 				'name'=>'idUsuario',
-				'value'=>'GxHtml::valueEx($data->idUsuario0)',
+				'value'=>'GxHtml::valueEx($data->usuario)',
 				'filter'=>GxHtml::listDataEx(Usuario::model()->findAllAttributes(null, true)),
 				),
 		array(

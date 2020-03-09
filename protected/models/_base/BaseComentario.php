@@ -15,8 +15,8 @@
  * @property integer $qtdCurtidas
  * @property integer $idUsuario
  *
- * @property Post $idPost0
- * @property Usuario $idUsuario0
+ * @property Post $post
+ * @property Usuario $usuario
  */
 abstract class BaseComentario extends GxActiveRecord {
 
@@ -47,8 +47,8 @@ abstract class BaseComentario extends GxActiveRecord {
 
 	public function relations() {
 		return array(
-			'idPost0' => array(self::BELONGS_TO, 'Post', 'idPost'),
-			'idUsuario0' => array(self::BELONGS_TO, 'Usuario', 'idUsuario'),
+			'post' => array(self::BELONGS_TO, 'Post', 'idPost'),
+			'usuario' => array(self::BELONGS_TO, 'Usuario', 'idUsuario'),
 		);
 	}
 
@@ -64,8 +64,8 @@ abstract class BaseComentario extends GxActiveRecord {
 			'idPost' => null,
 			'qtdCurtidas' => Yii::t('app', 'Qtd Curtidas'),
 			'idUsuario' => null,
-			'idPost0' => null,
-			'idUsuario0' => null,
+			'post' => null,
+			'usuario' => null,
 		);
 	}
 
