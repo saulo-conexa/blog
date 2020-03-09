@@ -10,6 +10,12 @@ $this->breadcrumbs = array(
 ?>
 
 <div class="conteudo">
+    <?php if(Yii::app()->user->hasFlash('comentarioEnviado')): ?>
+        <div class="flash-success">
+            <b>Comentário Enviado: </b>
+            <?= Yii::app()->user->getFlash('comentarioEnviado') ?>
+        </div>
+    <?php endif; ?>
     <h1 class="titulo"><span><?= $post->titulo ?></span></h1>
     <p>Escrito por: <?= $post->autor->nome ?> | <?= date('H:i d/m/Y', strtotime($post->dataPublicacao)) ?></p>
     <div class="post-content">
@@ -28,9 +34,9 @@ $this->breadcrumbs = array(
                         <p><b><?= $comentario->usuario->nome ?></b></p>
                         <p><?= $comentario->texto ?></p>
                         <br>
-                        <a class="like-button" href="#" title="Curtir">
+                        <a id="likeButton<?=$comentario->id?>" class="like-button" href="javascript:(likeComent(<?=$comentario->id?>,this))" title="Curtir">
                             <i class="fa fa-thumbs-up"></i>
-                            <br> <?= $comentario->qtdCurtidas ?>
+                            <br> <span class="qtd"><?= $comentario->qtdCurtidas ?></span>
                         </a>
                     </div>
                 <?php endforeach; ?>
@@ -40,8 +46,9 @@ $this->breadcrumbs = array(
         <?php endif; ?>
         <br>
         <h4>Deixei aqui sua Opinião/Comentário</h4>
-        <form class="form-comentario" action="/index.php?r=site/comentario" method="post">
+        <form class="form-comentario" action="<?=$this->createUrl('site/comentario')?>" method="post">
             <textarea name="comentario" rows="6"></textarea>
+            <input style="display: none" name="idPost" value="<?=$_GET['id']?>">
             <?php if (Yii::app()->user->isGuest) : ?>
                 <div class="textarea-overlay">
                     <p>Apenas usuário autenticados podem comentar.</p>
@@ -188,10 +195,27 @@ $this->breadcrumbs = array(
 <?php if (Yii::app()->user->isGuest) : ?>
     <script>
         $('textarea').focus(function() {
-            if (confirm('Apenas Usuários Autenticados podem comentar.')) {
+            if (confirm('Apenas Usuários Autenticados podem comentar. Desejar entrar?')) {
                 window.location.href = "<?= $this->createUrl('site/login') ?>"
             }
             $('textarea').blur()
         })
     </script>
 <?php endif; ?>
+<script>
+    function likeComent(id, el){
+        <?php if (Yii::app()->user->isGuest) : ?>
+            if (confirm('Apenas Usuários Autenticados podem comentar. Desejar entrar?')) {
+                window.location.href = "<?= $this->createUrl('site/login') ?>"
+            }
+        <?php else: ?>
+            $.post('<?= $this->createUrl('site/curtir') ?>',{id},response => {
+                if(response == 'success'){
+                    var counter = $(`#likeButton${id}`).find('.qtd')
+                    var qtd = counter.text()
+                    counter.text(+qtd + 1)
+                }
+            })
+        <?php endif; ?>
+    }
+</script>

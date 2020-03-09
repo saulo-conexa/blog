@@ -92,16 +92,29 @@ class SiteController extends Controller
 	 */
 	public function actionComentario()
 	{
-		$id = $_GET['id'];
+		$id = $_POST['idPost'];
 		$model = new Comentario;
 		if (isset($_POST['comentario'])) {
 			$data = [
-
+				'texto' => $_POST['comentario'],
+				'idPost' => $id,
+				'qtdCurtidas' => 0,
+				'idUsuario' => Yii::app()->session->get('idUsuario'),
 			];
 			$model->setAttributes($data);
-			$model->save();
+			if ($model->save())
+				Yii::app()->user->setFlash('comentarioEnviado', 'Obrigado pela contribuição :)');
 		}
 		$this->redirect($this->createUrl('site/post', ['id' => $id]));
+	}
+
+	public function actionCurtir()
+	{
+		$comentario = Comentario::model()->findByPk($_POST['id']);
+		$comentario->qtdCurtidas+=1;
+		if($comentario->save())
+			die('success');
+		die('error');
 	}
 
 

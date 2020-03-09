@@ -1440,3 +1440,14 @@ Stack trace:
 REQUEST_URI=/index.php?r=site/post&id=2
 HTTP_REFERER=http://localhost:8000/index.php
 ---
+2020/03/09 09:18:29 [error] [php] Undefined index: id (/home/saulo/Documentos/Projetos/blog/protected/controllers/SiteController.php:95)
+Stack trace:
+#0 /home/saulo/YiiRoot/framework/web/CController.php(287): SiteController->runAction()
+#1 /home/saulo/YiiRoot/framework/web/CController.php(266): SiteController->runActionWithFilters()
+#2 /home/saulo/YiiRoot/framework/web/CWebApplication.php(283): SiteController->run()
+#3 /home/saulo/YiiRoot/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#4 /home/saulo/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#5 /home/saulo/Documentos/Projetos/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/comentario
+in /home/saulo/Documentos/Projetos/blog/protected/controllers/SiteController.php (95)
+in /home/saulo/Documentos/Projetos/blog/index.php (13)

@@ -62,7 +62,7 @@
 			'items'=>array(
 				array('label'=>'Home', 'url'=>array('/site/index')),
 				array('label'=>'Sobre', 'url'=>array('/site/page', 'view'=>'about')),
-				array('label'=>'Contato', 'url'=>array('/site/contact')),
+				// array('label'=>'Contato', 'url'=>array('/site/contact')),
 			),
 		)); ?>
 	</div><!-- mainmenu -->
