@@ -1778,3 +1778,233 @@ Stack trace:
 REQUEST_URI=/index.php?r=site/meusDados
 in /home/saulo/Documentos/Projetos/blog/protected/controllers/SiteController.php (203)
 in /home/saulo/Documentos/Projetos/blog/index.php (13)
+2020/03/09 12:47:23 [error] [system.db.CDbCommand] Falha ao executar CDbCommand::fetchAll(): SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. A declaração SQL executada foi: SELECT * FROM `post` `t` WHERE (titulo LIKE :ycp0) OR (texto LIKE :ycp1).
+in /home/saulo/Documentos/Projetos/blog/protected/controllers/SiteController.php (84)
+in /home/saulo/Documentos/Projetos/blog/index.php (13)
+2020/03/09 12:47:23 [error] [exception.CDbException] CDbException: CDbCommand falhou ao executar o comando SQL: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: SELECT * FROM `post` `t` WHERE (titulo LIKE :ycp0) OR (texto LIKE :ycp1) in /home/saulo/YiiRoot/framework/db/CDbCommand.php:528
+Stack trace:
+#0 /home/saulo/YiiRoot/framework/db/CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /home/saulo/YiiRoot/framework/db/ar/CActiveRecord.php(1291): CDbCommand->queryAll()
+#2 /home/saulo/YiiRoot/framework/db/ar/CActiveRecord.php(1410): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /home/saulo/Documentos/Projetos/blog/protected/controllers/SiteController.php(84): CActiveRecord->findAll(Object(CDbCriteria))
+#4 /home/saulo/YiiRoot/framework/web/actions/CInlineAction.php(50): SiteController->actionIndex()
+#5 /home/saulo/YiiRoot/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#6 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 /home/saulo/YiiRoot/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#8 /home/saulo/YiiRoot/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 /home/saulo/YiiRoot/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 /home/saulo/YiiRoot/framework/web/CController.php(292): CFilterChain->run()
+#12 /home/saulo/YiiRoot/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /home/saulo/YiiRoot/framework/web/CWebApplication.php(283): CController->run('')
+#14 /home/saulo/YiiRoot/framework/web/CWebApplication.php(142): CWebApplication->runController('')
+#15 /home/saulo/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /home/saulo/Documentos/Projetos/blog/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/?q=outro
+HTTP_REFERER=http://localhost:8000/
+---
+2020/03/09 12:47:41 [error] [system.db.CDbCommand] Falha ao executar CDbCommand::fetchAll(): SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. A declaração SQL executada foi: SELECT * FROM `post` `t` WHERE (titulo LIKE :ycp0) OR (texto LIKE :ycp1).
+in /home/saulo/Documentos/Projetos/blog/protected/controllers/SiteController.php (84)
+in /home/saulo/Documentos/Projetos/blog/index.php (13)
+2020/03/09 12:47:41 [error] [exception.CDbException] CDbException: CDbCommand falhou ao executar o comando SQL: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: SELECT * FROM `post` `t` WHERE (titulo LIKE :ycp0) OR (texto LIKE :ycp1) in /home/saulo/YiiRoot/framework/db/CDbCommand.php:528
+Stack trace:
+#0 /home/saulo/YiiRoot/framework/db/CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /home/saulo/YiiRoot/framework/db/ar/CActiveRecord.php(1291): CDbCommand->queryAll()
+#2 /home/saulo/YiiRoot/framework/db/ar/CActiveRecord.php(1410): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /home/saulo/Documentos/Projetos/blog/protected/controllers/SiteController.php(84): CActiveRecord->findAll(Object(CDbCriteria))
+#4 /home/saulo/YiiRoot/framework/web/actions/CInlineAction.php(50): SiteController->actionIndex()
+#5 /home/saulo/YiiRoot/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#6 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 /home/saulo/YiiRoot/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#8 /home/saulo/YiiRoot/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 /home/saulo/YiiRoot/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 /home/saulo/YiiRoot/framework/web/CController.php(292): CFilterChain->run()
+#12 /home/saulo/YiiRoot/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /home/saulo/YiiRoot/framework/web/CWebApplication.php(283): CController->run('')
+#14 /home/saulo/YiiRoot/framework/web/CWebApplication.php(142): CWebApplication->runController('')
+#15 /home/saulo/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /home/saulo/Documentos/Projetos/blog/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/?q=outro
+HTTP_REFERER=http://localhost:8000/
+---
+2020/03/09 12:47:59 [error] [system.db.CDbCommand] Falha ao executar CDbCommand::fetchAll(): SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. A declaração SQL executada foi: SELECT * FROM `post` `t` WHERE (titulo LIKE :ycp0) OR (texto LIKE :ycp1).
+in /home/saulo/Documentos/Projetos/blog/protected/controllers/SiteController.php (84)
+in /home/saulo/Documentos/Projetos/blog/index.php (13)
+2020/03/09 12:47:59 [error] [exception.CDbException] CDbException: CDbCommand falhou ao executar o comando SQL: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: SELECT * FROM `post` `t` WHERE (titulo LIKE :ycp0) OR (texto LIKE :ycp1) in /home/saulo/YiiRoot/framework/db/CDbCommand.php:528
+Stack trace:
+#0 /home/saulo/YiiRoot/framework/db/CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /home/saulo/YiiRoot/framework/db/ar/CActiveRecord.php(1291): CDbCommand->queryAll()
+#2 /home/saulo/YiiRoot/framework/db/ar/CActiveRecord.php(1410): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /home/saulo/Documentos/Projetos/blog/protected/controllers/SiteController.php(84): CActiveRecord->findAll(Object(CDbCriteria))
+#4 /home/saulo/YiiRoot/framework/web/actions/CInlineAction.php(50): SiteController->actionIndex()
+#5 /home/saulo/YiiRoot/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#6 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 /home/saulo/YiiRoot/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#8 /home/saulo/YiiRoot/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 /home/saulo/YiiRoot/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 /home/saulo/YiiRoot/framework/web/CController.php(292): CFilterChain->run()
+#12 /home/saulo/YiiRoot/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /home/saulo/YiiRoot/framework/web/CWebApplication.php(283): CController->run('')
+#14 /home/saulo/YiiRoot/framework/web/CWebApplication.php(142): CWebApplication->runController('')
+#15 /home/saulo/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /home/saulo/Documentos/Projetos/blog/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/?q=outro
+HTTP_REFERER=http://localhost:8000/
+---
+2020/03/09 12:48:00 [error] [system.db.CDbCommand] Falha ao executar CDbCommand::fetchAll(): SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. A declaração SQL executada foi: SELECT * FROM `post` `t` WHERE (titulo LIKE :ycp0) OR (texto LIKE :ycp1).
+in /home/saulo/Documentos/Projetos/blog/protected/controllers/SiteController.php (84)
+in /home/saulo/Documentos/Projetos/blog/index.php (13)
+2020/03/09 12:48:00 [error] [exception.CDbException] CDbException: CDbCommand falhou ao executar o comando SQL: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: SELECT * FROM `post` `t` WHERE (titulo LIKE :ycp0) OR (texto LIKE :ycp1) in /home/saulo/YiiRoot/framework/db/CDbCommand.php:528
+Stack trace:
+#0 /home/saulo/YiiRoot/framework/db/CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /home/saulo/YiiRoot/framework/db/ar/CActiveRecord.php(1291): CDbCommand->queryAll()
+#2 /home/saulo/YiiRoot/framework/db/ar/CActiveRecord.php(1410): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /home/saulo/Documentos/Projetos/blog/protected/controllers/SiteController.php(84): CActiveRecord->findAll(Object(CDbCriteria))
+#4 /home/saulo/YiiRoot/framework/web/actions/CInlineAction.php(50): SiteController->actionIndex()
+#5 /home/saulo/YiiRoot/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#6 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 /home/saulo/YiiRoot/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#8 /home/saulo/YiiRoot/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 /home/saulo/YiiRoot/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 /home/saulo/YiiRoot/framework/web/CController.php(292): CFilterChain->run()
+#12 /home/saulo/YiiRoot/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /home/saulo/YiiRoot/framework/web/CWebApplication.php(283): CController->run('')
+#14 /home/saulo/YiiRoot/framework/web/CWebApplication.php(142): CWebApplication->runController('')
+#15 /home/saulo/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /home/saulo/Documentos/Projetos/blog/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/?q=outro
+HTTP_REFERER=http://localhost:8000/
+---
+2020/03/09 12:49:09 [error] [system.db.CDbCommand] Falha ao executar CDbCommand::fetchAll(): SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. A declaração SQL executada foi: SELECT * FROM `post` `t` WHERE (titulo LIKE :ycp0) OR (texto LIKE :ycp1).
+in /home/saulo/Documentos/Projetos/blog/protected/controllers/SiteController.php (85)
+in /home/saulo/Documentos/Projetos/blog/index.php (13)
+2020/03/09 12:49:09 [error] [exception.CDbException] CDbException: CDbCommand falhou ao executar o comando SQL: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. The SQL statement executed was: SELECT * FROM `post` `t` WHERE (titulo LIKE :ycp0) OR (texto LIKE :ycp1) in /home/saulo/YiiRoot/framework/db/CDbCommand.php:528
+Stack trace:
+#0 /home/saulo/YiiRoot/framework/db/CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /home/saulo/YiiRoot/framework/db/ar/CActiveRecord.php(1291): CDbCommand->queryAll()
+#2 /home/saulo/YiiRoot/framework/db/ar/CActiveRecord.php(1410): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /home/saulo/Documentos/Projetos/blog/protected/controllers/SiteController.php(85): CActiveRecord->findAll(Object(CDbCriteria))
+#4 /home/saulo/YiiRoot/framework/web/actions/CInlineAction.php(50): SiteController->actionIndex()
+#5 /home/saulo/YiiRoot/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#6 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 /home/saulo/YiiRoot/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#8 /home/saulo/YiiRoot/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 /home/saulo/YiiRoot/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 /home/saulo/YiiRoot/framework/web/CController.php(292): CFilterChain->run()
+#12 /home/saulo/YiiRoot/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /home/saulo/YiiRoot/framework/web/CWebApplication.php(283): CController->run('')
+#14 /home/saulo/YiiRoot/framework/web/CWebApplication.php(142): CWebApplication->runController('')
+#15 /home/saulo/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /home/saulo/Documentos/Projetos/blog/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/?q=outro
+HTTP_REFERER=http://localhost:8000/
+---
+2020/03/09 12:49:10 [error] [system.db.CDbCommand] Falha ao executar CDbCommand::fetchAll(): SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. A declaração SQL executada foi: SELECT * FROM `post` `t` WHERE (titulo LIKE :ycp0) OR (texto LIKE :ycp1).
+in /home/saulo/Documentos/Projetos/blog/protected/controllers/SiteController.php (85)
+in /home/saulo/Documentos/Projetos/blog/index.php (13)
+2020/03/09 12:49:10 [error] [exception.CDbException] CDbException: CDbCommand falhou ao executar o comando SQL: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. The SQL statement executed was: SELECT * FROM `post` `t` WHERE (titulo LIKE :ycp0) OR (texto LIKE :ycp1) in /home/saulo/YiiRoot/framework/db/CDbCommand.php:528
+Stack trace:
+#0 /home/saulo/YiiRoot/framework/db/CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /home/saulo/YiiRoot/framework/db/ar/CActiveRecord.php(1291): CDbCommand->queryAll()
+#2 /home/saulo/YiiRoot/framework/db/ar/CActiveRecord.php(1410): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /home/saulo/Documentos/Projetos/blog/protected/controllers/SiteController.php(85): CActiveRecord->findAll(Object(CDbCriteria))
+#4 /home/saulo/YiiRoot/framework/web/actions/CInlineAction.php(50): SiteController->actionIndex()
+#5 /home/saulo/YiiRoot/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#6 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 /home/saulo/YiiRoot/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#8 /home/saulo/YiiRoot/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 /home/saulo/YiiRoot/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 /home/saulo/YiiRoot/framework/web/CController.php(292): CFilterChain->run()
+#12 /home/saulo/YiiRoot/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /home/saulo/YiiRoot/framework/web/CWebApplication.php(283): CController->run('')
+#14 /home/saulo/YiiRoot/framework/web/CWebApplication.php(142): CWebApplication->runController('')
+#15 /home/saulo/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /home/saulo/Documentos/Projetos/blog/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/?q=outro
+HTTP_REFERER=http://localhost:8000/
+---
+2020/03/09 12:49:10 [error] [system.db.CDbCommand] Falha ao executar CDbCommand::fetchAll(): SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. A declaração SQL executada foi: SELECT * FROM `post` `t` WHERE (titulo LIKE :ycp0) OR (texto LIKE :ycp1).
+in /home/saulo/Documentos/Projetos/blog/protected/controllers/SiteController.php (85)
+in /home/saulo/Documentos/Projetos/blog/index.php (13)
+2020/03/09 12:49:10 [error] [exception.CDbException] CDbException: CDbCommand falhou ao executar o comando SQL: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. The SQL statement executed was: SELECT * FROM `post` `t` WHERE (titulo LIKE :ycp0) OR (texto LIKE :ycp1) in /home/saulo/YiiRoot/framework/db/CDbCommand.php:528
+Stack trace:
+#0 /home/saulo/YiiRoot/framework/db/CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /home/saulo/YiiRoot/framework/db/ar/CActiveRecord.php(1291): CDbCommand->queryAll()
+#2 /home/saulo/YiiRoot/framework/db/ar/CActiveRecord.php(1410): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /home/saulo/Documentos/Projetos/blog/protected/controllers/SiteController.php(85): CActiveRecord->findAll(Object(CDbCriteria))
+#4 /home/saulo/YiiRoot/framework/web/actions/CInlineAction.php(50): SiteController->actionIndex()
+#5 /home/saulo/YiiRoot/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#6 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 /home/saulo/YiiRoot/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#8 /home/saulo/YiiRoot/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 /home/saulo/YiiRoot/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 /home/saulo/YiiRoot/framework/web/CController.php(292): CFilterChain->run()
+#12 /home/saulo/YiiRoot/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /home/saulo/YiiRoot/framework/web/CWebApplication.php(283): CController->run('')
+#14 /home/saulo/YiiRoot/framework/web/CWebApplication.php(142): CWebApplication->runController('')
+#15 /home/saulo/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /home/saulo/Documentos/Projetos/blog/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/?q=outro
+HTTP_REFERER=http://localhost:8000/
+---
+2020/03/09 12:49:10 [error] [system.db.CDbCommand] Falha ao executar CDbCommand::fetchAll(): SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. A declaração SQL executada foi: SELECT * FROM `post` `t` WHERE (titulo LIKE :ycp0) OR (texto LIKE :ycp1).
+in /home/saulo/Documentos/Projetos/blog/protected/controllers/SiteController.php (85)
+in /home/saulo/Documentos/Projetos/blog/index.php (13)
+2020/03/09 12:49:10 [error] [exception.CDbException] CDbException: CDbCommand falhou ao executar o comando SQL: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. The SQL statement executed was: SELECT * FROM `post` `t` WHERE (titulo LIKE :ycp0) OR (texto LIKE :ycp1) in /home/saulo/YiiRoot/framework/db/CDbCommand.php:528
+Stack trace:
+#0 /home/saulo/YiiRoot/framework/db/CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /home/saulo/YiiRoot/framework/db/ar/CActiveRecord.php(1291): CDbCommand->queryAll()
+#2 /home/saulo/YiiRoot/framework/db/ar/CActiveRecord.php(1410): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /home/saulo/Documentos/Projetos/blog/protected/controllers/SiteController.php(85): CActiveRecord->findAll(Object(CDbCriteria))
+#4 /home/saulo/YiiRoot/framework/web/actions/CInlineAction.php(50): SiteController->actionIndex()
+#5 /home/saulo/YiiRoot/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#6 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 /home/saulo/YiiRoot/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#8 /home/saulo/YiiRoot/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 /home/saulo/YiiRoot/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 /home/saulo/YiiRoot/framework/web/CController.php(292): CFilterChain->run()
+#12 /home/saulo/YiiRoot/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /home/saulo/YiiRoot/framework/web/CWebApplication.php(283): CController->run('')
+#14 /home/saulo/YiiRoot/framework/web/CWebApplication.php(142): CWebApplication->runController('')
+#15 /home/saulo/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /home/saulo/Documentos/Projetos/blog/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/?q=outro
+HTTP_REFERER=http://localhost:8000/
+---
+2020/03/09 12:50:21 [error] [php] Undefined index: q (/home/saulo/Documentos/Projetos/blog/protected/views/site/index.php:42)
+Stack trace:
+#0 /home/saulo/YiiRoot/framework/web/CController.php(870): SiteController->renderFile()
+#1 /home/saulo/YiiRoot/framework/web/CController.php(783): SiteController->renderPartial()
+#2 /home/saulo/Documentos/Projetos/blog/protected/controllers/SiteController.php(89): SiteController->render()
+#3 /home/saulo/YiiRoot/framework/web/actions/CInlineAction.php(50): SiteController->actionIndex()
+#4 /home/saulo/YiiRoot/framework/web/CController.php(309): CInlineAction->runWithParams()
+#5 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(134): SiteController->runAction()
+#6 /home/saulo/YiiRoot/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /home/saulo/YiiRoot/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#8 /home/saulo/YiiRoot/framework/web/filters/CInlineFilter.php(59): SiteController->filterAccessControl()
+#9 /home/saulo/YiiRoot/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#10 /home/saulo/YiiRoot/framework/web/CController.php(292): CFilterChain->run()
+#11 /home/saulo/YiiRoot/framework/web/CController.php(266): SiteController->runActionWithFilters()
+#12 /home/saulo/YiiRoot/framework/web/CWebApplication.php(283): SiteController->run()
+#13 /home/saulo/YiiRoot/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#14 /home/saulo/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /home/saulo/Documentos/Projetos/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/
+in /home/saulo/Documentos/Projetos/blog/protected/views/site/index.php (42)
+in /home/saulo/Documentos/Projetos/blog/protected/controllers/SiteController.php (89)
+in /home/saulo/Documentos/Projetos/blog/index.php (13)

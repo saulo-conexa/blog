@@ -40,18 +40,8 @@ class SiteController extends Controller
 	{
 		return array(
 			array(
-				'allow',  // allow all users to access 'index' and 'view' actions.
-				'actions' => array('index', 'view'),
-				'users' => array('*'),
-			),
-			array(
-				'allow',  // allow all users to access 'index' and 'view' actions.
-				'actions' => array('login', 'view'),
-				'users' => array('*'),
-			),
-			array(
-				'allow',  // allow all users to access 'index' and 'view' actions.
-				'actions' => array('post', 'view'),
+				'allow',
+				'actions' => array('index', 'login', 'post', 'cadastro'),
 				'users' => array('*'),
 			),
 			array(
@@ -73,8 +63,9 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		$idCategoria = isset($_GET['categoria']) ? $_GET['categoria'] : false;
 		$criteria = new CDbCriteria;
+		
+		$idCategoria = isset($_GET['categoria']) ? $_GET['categoria'] : false;
 		if ($idCategoria) {
 			$criteria->addCondition('idCategoria=:idCategoria', 'AND');
 			$criteria->params = array(
@@ -82,16 +73,12 @@ class SiteController extends Controller
 			);
 		}
 
-		// $pageno = isset($_GET['pageno']) ? $_GET['pageno'] : 1;
-		// $qtdPerRequest = 2;
-		// $criteria->order = "destaque DESC, id DESC";
-		// $criteria->limit = $qtdPerRequest;
-		// $criteria->offset = $pageno * $qtdPerRequest;
-
+		if (isset($_GET['q'])) {
+			$criteria->addSearchCondition("titulo", $_GET['q'], true, 'OR');
+			$criteria->addSearchCondition("texto", $_GET['q'], true, 'OR');
+		}
+		
 		$posts = Post::model()->findAll($criteria); // $params não é necessario
-
-		// $countPosts = Post::model()->count();
-		// $total_pages = ceil($countPosts / $qtdPerRequest);
 
 		$criteriaCategoria = new CDbCriteria();
 		$criteriaCategoria->order = 'ordem asc, id asc';
@@ -99,8 +86,6 @@ class SiteController extends Controller
 
 		$this->render('index', array(
 			'posts' => $posts,
-			// 'pageno' => $pageno,
-			// 'total_pages' => $total_pages,
 			'categorias' => $categorias,
 		));
 	}
@@ -150,7 +135,7 @@ class SiteController extends Controller
 	}
 
 	/**
-	 * Displays the contact page
+	 * Displays the post page
 	 */
 	public function actionPost()
 	{
@@ -177,7 +162,7 @@ class SiteController extends Controller
 
 
 	/**
-	 * Displays the contact page
+	 * Comenta em uma publicação
 	 */
 	public function actionComentario()
 	{
@@ -206,29 +191,50 @@ class SiteController extends Controller
 		die('error');
 	}
 
-
-	/**
-	 * Displays the contact page
-	 */
-	public function actionContact()
+	public function actionMeusDados()
 	{
-		$model = new ContactForm;
-		if (isset($_POST['ContactForm'])) {
-			$model->attributes = $_POST['ContactForm'];
-			if ($model->validate()) {
-				$name = '=?UTF-8?B?' . base64_encode($model->name) . '?=';
-				$subject = '=?UTF-8?B?' . base64_encode($model->subject) . '?=';
-				$headers = "From: $name <{$model->email}>\r\n" .
-					"Reply-To: {$model->email}\r\n" .
-					"MIME-Version: 1.0\r\n" .
-					"Content-type: text/plain; charset=UTF-8";
 
-				mail(Yii::app()->params['adminEmail'], $subject, $model->body, $headers);
-				Yii::app()->user->setFlash('contact', 'Thank you for contacting us. We will respond to you as soon as possible.');
-				$this->refresh();
+		$model = new Usuario();
+		$usuario = $model->findByPk(Yii::app()->session->get('idUsuario'));
+		if (!empty($_POST)) {
+			$_POST['senha'] = $usuario->senha;
+			$usuario->attributes = $_POST;
+			if ($usuario->save()) {
+				Yii::app()->user->setFlash('atualizacaoSucesso', 'Dados Atualizados com Sucesso!');
+			} else {
+				Yii::app()->user->setFlash('atualizacaoErro', 'Erro ao atualizar Dados');
 			}
 		}
-		$this->render('contact', array('model' => $model));
+		// display the cadastro form
+		$this->render('meusDados', array(
+			'model' => $model,
+			'usuario' => $usuario,
+		));
+	}
+
+	/**
+	 * Displays the login page
+	 */
+	public function actionCadastro()
+	{
+		$model = new Usuario();
+		if (!empty($_POST)) {
+			$usuario = $model->findByAttributes([
+				'email' => $_POST['email']
+			]);
+			if (is_null($usuario)) {
+				$_POST['senha'] = md5($_POST['senha']);
+				$model->attributes = $_POST;
+				if ($model->save()) {
+					Yii::app()->user->setFlash('usuarioCadasatrado', 'Faça Login para continuar');
+					$this->redirect($this->createUrl('site/login'));
+				}
+			} else {
+				Yii::app()->user->setFlash('usuarioExistente', 'Usuário já cadastrado no sistema');
+			}
+		}
+		// display the cadastro form
+		$this->render('cadastro', array('model' => $model));
 	}
 
 	/**
@@ -237,12 +243,6 @@ class SiteController extends Controller
 	public function actionLogin()
 	{
 		$model = new LoginForm;
-
-		// if it is ajax validation request
-		if (isset($_POST['ajax']) && $_POST['ajax'] === 'login-form') {
-			echo CActiveForm::validate($model);
-			Yii::app()->end();
-		}
 
 		// collect user input data
 		if (isset($_POST['LoginForm'])) {

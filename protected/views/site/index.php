@@ -39,7 +39,7 @@ $this->pageTitle = Yii::app()->name;
 		<p><b>Filtros</b></p>
 		<form class="form-busca" action="/">
 			<div class="input-group">
-				<input type="text" name="q">
+				<input type="text" name="q" value="<?=isset($_GET['q'])?$_GET['q']:''?>" placeholder="Palavra-chave">
 				<button type="submit"><i class="fa fa-search"></i></button>
 			</div>
 		</form>
