@@ -213,7 +213,7 @@ div.search-form {
 	border-top: 0;
 }
 
-#header div#user-menu-container > * {
+#header div#user-menu-container>* {
 	text-decoration: none;
 	font-size: 15px;
 	color: inherit;
@@ -221,16 +221,16 @@ div.search-form {
 	align-items: flex-start;
 }
 
-#header div#user-menu-container > * .user-info {
+#header div#user-menu-container>* .user-info {
 	margin-left: 5px;
 }
 
-#header div#user-menu-container > * .user-info p {
+#header div#user-menu-container>* .user-info p {
 	margin: 0;
 	line-height: 1;
 }
 
-#header div#user-menu-container > * i.fa {
+#header div#user-menu-container>* i.fa {
 	font-size: 32px;
 }
 
@@ -262,45 +262,44 @@ div.search-form {
 	}
 }
 
-.welcome{
+.welcome {
 	margin-bottom: 45px;
 }
 
-.post-list {
+.post-list {}
 
-}
-
-.post-list .post{
+.post-list .post {
 	padding-bottom: 30px;
 	margin-bottom: 30px;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.35);
 }
 
-.post-list .post h3{
+.post-list .post h3 {
 	margin: 0 0 10px;
 }
 
-.post-list .post .badge{
+.post-list .post .badge {
 	padding: 3px 5px;
 	border-radius: 4px;
 	background: #ea824b;
 	color: #fff;
 }
 
-.categories p{
+.categories p {
 	font-size: 15px;
 }
-.categories ul{
+
+.categories ul {
 	list-style: none;
 }
 
-.categories ul li{
+.categories ul li {
 	margin-bottom: 10px;
 	position: relative;
 	display: flex;
 }
 
-.categories ul li:before{
+.categories ul li:before {
 	content: '➡';
 	color: #ea824b;
 	display: inline-block;
@@ -308,13 +307,23 @@ div.search-form {
 	transition: .3s;
 }
 
-.categories ul li:hover:before{
+.categories ul li:hover:before {
 	transform: translateX(-5px);
 }
 
-.categories ul li a{
+.categories ul li a {
 	font-size: 15px;
 	color: inherit;
 	display: inline-block;
 	width: 100%;
+}
+
+input[type="submit"],
+button[type="submit"] {
+	padding: 6px 14px;
+	border-radius: 3px;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	background: #27ae60;
+	color: #fff;
+	cursor: pointer
 }
